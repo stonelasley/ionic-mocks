@@ -4,7 +4,7 @@ Simple Mocking of common Ionic 2 Dependencies
 This project is still very early in development and there are several things to workout. However since this is only meant
 to be used in your tests it should be safe to pull into a project. 
 
-##Supported Types
+## Supported Types
 - Alert
 - AlertController
 - Events
@@ -15,7 +15,12 @@ to be used in your tests it should be safe to pull into a project.
 - Tab
 - Tabs
 
-###Examples
+## Installation
+```bash
+npm install --save-dev ionic-mocks
+```
+
+### Examples
 
 ```typescript
 import {Events, AlertController} from 'ionic-angular';
@@ -50,7 +55,7 @@ describe('IonicComponent', () => {
 });
 ```
 
-###Simple Mocking of dependency return types
+### Simple Mocking of dependency return types
 ```typescript
 import {Events, AlertController, Alert} from 'ionic-angular';
 import {EventsMock, AlertControllerMock, AlertMock} from 'ionic-mocks';
