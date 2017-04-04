@@ -1,0 +1,19 @@
+{
+  "name": "ionic-mocks",
+  "version": "0.0.1",
+  "description": "Pre-mocked Ionic2 Objects",
+  "repository": "git@github.com:stonelasley/ionic-mocks.git",
+  "main": "./src/index.ts",
+  "scripts": {
+    "build": "tsc -d",
+    "prepublish": "npm run build"
+  },
+  "author": "Stone C. Lasley",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^2.0.9",
+    "@types/node": "^7.0.12",
+    "@types/jasmine": "^2.5.47",
+    "jasmine": "^2.5.3"
+  }
+}
