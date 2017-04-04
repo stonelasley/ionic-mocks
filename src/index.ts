@@ -1,17 +1,33 @@
-import { EventsMock } from './mocks/events.mock';
-import { NavControllerMock } from './mocks/nav-controller.mock';
-import { AlertMock } from './mocks/alert.mock';
-import { AlertControllerMock } from './mocks/alert-controller.mock';
-import { NavParamsMock} from './mocks/nav-params.mock';
-import { TabMock } from './mocks/tab.mock';
-import { TabsMock } from './mocks/tabs.mock';
+import { EventsMock }           from './mocks/events';
+import { NavControllerMock }    from './mocks/nav-controller';
+import { AlertMock }            from './mocks/alert';
+import { AlertControllerMock }  from './mocks/alert-controller';
+import { NavParamsMock}         from './mocks/nav-params';
+import { TabMock }              from './mocks/tab';
+import { TabsMock }             from './mocks/tabs';
+import { ModalControllerMock }  from './mocks/modal-controller';
+import { ModalMock }            from './mocks/modal';
 
 export {
+	AlertMock,
+	AlertControllerMock,
+	EventsMock,
+	NavControllerMock,
+	NavParamsMock,
+	TabMock,
+	TabsMock,
+	ModalMock,
+	ModalControllerMock
+}
+
+export const IONIC_MOCKS = [
 	EventsMock,
 	NavControllerMock,
 	AlertMock,
 	AlertControllerMock,
 	NavParamsMock,
 	TabMock,
-	TabsMock
-}
+	TabsMock,
+	ModalMock,
+	ModalControllerMock
+];

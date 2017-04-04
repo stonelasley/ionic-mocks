@@ -1,6 +1,8 @@
-import { TabMock } from './tab.mock';
+import { TabMock } from './tab';
+import { Tabs } from 'ionic-angular';
+
 export class TabsMock {
-	public static instance(): any {
+	public static instance(): Tabs {
 		let defaultTab = TabMock.instance();
 		let selectedTab = TabMock.instance();
 		let previousTab = TabMock.instance();
