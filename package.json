@@ -25,5 +25,8 @@
     "@types/node": "^7.0.12",
     "@types/jasmine": "^2.5.47",
     "jasmine": "^2.5.3"
+  },
+  "devDependencies": {
+    "uuid": "^3.0.1"
   }
 }
