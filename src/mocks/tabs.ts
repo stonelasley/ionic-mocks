@@ -15,9 +15,9 @@ export class TabsMock {
 			'viewCtrl'
 		]);
 
-		(<jasmine.Spy>(instance.select)).and.returnValue(defaultTab);
-		(<jasmine.Spy>(instance.getSelected)).and.returnValue(selectedTab);
-		(<jasmine.Spy>(instance.previousTab)).and.returnValue(previousTab);
+		instance.select.and.returnValue(defaultTab);
+		instance.getSelected.and.returnValue(selectedTab);
+		instance.previousTab.and.returnValue(previousTab);
 
 		return instance;
 	}

@@ -1,13 +1,9 @@
 {
   "name": "ionic-mocks",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Pre-mocked Ionic2 Objects",
   "repository": "git@github.com:stonelasley/ionic-mocks.git",
   "main": "./src/index.ts",
-  "scripts": {
-    "build": "tsc -d",
-    "prepublish": "npm run build"
-  },
   "author": "Stone C. Lasley",
   "license": "MIT",
   "dependencies": {

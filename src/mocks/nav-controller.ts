@@ -15,10 +15,10 @@ export class NavControllerMock {
 			'ionViewCanLeave'
 		]);
 
-		(<jasmine.Spy>(instance.push)).and.returnValue(Promise.resolve());
-		(<jasmine.Spy>(instance.pop)).and.returnValue(Promise.resolve());
-		(<jasmine.Spy>(instance.ionViewCanEnter)).and.returnValue(true);
-		(<jasmine.Spy>(instance.ionViewCanLeave)).and.returnValue(true);
+		instance.push.and.returnValue(Promise.resolve());
+		instance.pop.and.returnValue(Promise.resolve());
+		instance.ionViewCanEnter.and.returnValue(true);
+		instance.ionViewCanLeave.and.returnValue(true);
 
 		return instance;
 	}

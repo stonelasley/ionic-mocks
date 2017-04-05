@@ -10,7 +10,7 @@ export class HapticMock {
 			'notification',
 			'selection'
 		]);
-		(<jasmine.Spy>(instance.available)).and.returnValue(true);
+		instance.available.and.returnValue(true);
 
 		return instance;
 	}

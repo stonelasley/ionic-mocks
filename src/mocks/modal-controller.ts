@@ -6,7 +6,7 @@ export class ModalControllerMock {
 		let modal = modalMock || ModalMock.instance();
 
 		let instance = jasmine.createSpyObj('ModalController', ['create']);
-		(<jasmine.Spy>(instance.create)).and.returnValue(modal);
+		instance.create.and.returnValue(modal);
 
 		return instance;
 	}
