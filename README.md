@@ -5,13 +5,19 @@ This project is still very early in development and there are several things to 
 to be used in your tests it should be safe to pull into a project. 
 
 ## Supported Types
+- ActionSheet
+- ActionSheetController
 - Alert
 - AlertController
+- App
+- Content
 - Events
 - Haptic
 - Keyboard
 - Loading
 - LoadingController
+- Menu
+- MenuController
 - Modal
 - ModalController
 - NavController
