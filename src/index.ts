@@ -17,6 +17,10 @@ import { NavControllerMock }            from './mocks/nav-controller';
 import { NavParamsMock}                 from './mocks/nav-params';
 import { TabMock }                      from './mocks/tab';
 import { TabsMock }                     from './mocks/tabs';
+import { InfiniteScrollMock } from './mocks/inifinite-scroll';
+import { PlatformMock } from './mocks/platform';
+import { PopoverMock } from './mocks/popover';
+import { PopoverControllerMock } from './mocks/popover-controller';
 
 export {
 	ActionSheetMock,
@@ -27,6 +31,7 @@ export {
 	ContentMock,
 	EventsMock,
 	HapticMock,
+	InfiniteScrollMock,
 	KeyboardMock,
 	LoadingMock,
 	LoadingControllerMock,
@@ -35,6 +40,9 @@ export {
 	ModalMock,
 	ModalControllerMock,
 	NavControllerMock,
+	PlatformMock,
+	PopoverMock,
+	PopoverControllerMock,
 	NavParamsMock,
 	TabMock,
 	TabsMock
@@ -49,6 +57,7 @@ export const IONIC_MOCKS = [
 	ContentMock,
 	EventsMock,
 	HapticMock,
+	InfiniteScrollMock,
 	KeyboardMock,
 	LoadingMock,
 	LoadingControllerMock,
@@ -57,6 +66,9 @@ export const IONIC_MOCKS = [
 	ModalMock,
 	ModalControllerMock,
 	NavControllerMock,
+	PlatformMock,
+	PopoverMock,
+	PopoverControllerMock,
 	NavParamsMock,
 	TabMock,
 	TabsMock,

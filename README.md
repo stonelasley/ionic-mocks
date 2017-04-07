@@ -13,6 +13,7 @@ to be used in your tests it should be safe to pull into a project.
 - Content
 - Events
 - Haptic
+- InifiniteScroll
 - Keyboard
 - Loading
 - LoadingController
@@ -20,6 +21,9 @@ to be used in your tests it should be safe to pull into a project.
 - MenuController
 - Modal
 - ModalController
+- Platform
+- Popover
+- PopoverController
 - NavController
 - NavParams
 - Tab
