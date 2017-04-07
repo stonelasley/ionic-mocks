@@ -1,14 +1,13 @@
 {
   "name": "ionic-mocks",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Pre-mocked Ionic2 Objects",
   "repository": "git@github.com:stonelasley/ionic-mocks.git",
   "main": "./src/index.ts",
   "author": "Stone C. Lasley",
   "license": "MIT",
   "scripts": {
-    "build": "tsc -d",
-    "postinstall": "npm run build"
+    "build": "tsc -d"
   },
   "dependencies": {
     "@angular/common": "2.2.1",

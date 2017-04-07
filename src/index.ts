@@ -24,4 +24,5 @@ export { PopoverControllerMock }        from './mocks/popover-controller';
 export { ToastMock }                    from './mocks/toast';
 export { ToastControllerMock }          from './mocks/toast-controller';
 export { SlidesMock }                   from './mocks/slides';
+export { ViewControllerMock}            from './mocks/view-controller';
 
