@@ -6,6 +6,10 @@
   "main": "./src/index.ts",
   "author": "Stone C. Lasley",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc -d",
+    "postinstall": "npm run build"
+  },
   "dependencies": {
     "@angular/common": "2.2.1",
     "@angular/compiler": "2.2.1",
