@@ -39,5 +39,7 @@ jspm_packages
 # Idea editors
 .idea
 
-# Lib
-lib
+# Dist
+dist
+
+.DS_Store
