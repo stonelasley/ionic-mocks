@@ -2,7 +2,7 @@
 Simple Mocking of common Ionic 2 Dependencies
 
 This project is still very early in development and there are several things to workout. However since this is only meant
-to be used in your tests it should be safe to pull into a project. 
+to be used in your tests it should be safe to pull into a project.
 
 ## Supported Types
 - ActionSheet
@@ -28,6 +28,8 @@ to be used in your tests it should be safe to pull into a project.
 - NavParams
 - Tab
 - Tabs
+- Toast
+- ToastController
 
 ## Installation
 ```bash
