@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 export class ViewControllerMock {
 	public static instance(): any {
@@ -17,25 +17,26 @@ export class ViewControllerMock {
 			'isFirst',
 			'isLast',
 			'pageRef',
+			'getContent',
 			'contentRef',
 			'hasNavbar',
 			'setBackButtonText',
 			'showBackButton'
 		]);
 
-		instance.willEnter.and.return(Observable.from(undefined))
-		instance.didEnter.and.return(Observable.from(undefined))
-		instance.willLeave.and.return(Observable.from(undefined))
-		instance.didLeave.and.return(Observable.from(undefined))
-		instance.willUnload.and.return(Observable.from(undefined))
-		instance.didUnload.and.return(Observable.from(undefined))
-		instance.dismiss.and.return(Promise.resolve());
-		instance.enableBack.and.return(true);
-		instance.isFirst.and.return(false);
-		instance.isLast.and.return(false);
-		instance.pageRef.and.return({});
-		instance.getContent.and.return({});
-		instance.hasNavbar.and.return(true);
+		instance.willEnter.and.returnValue(Observable.of({}));
+		instance.didEnter.and.returnValue(Observable.of({}));
+		instance.willLeave.and.returnValue(Observable.of({}));
+		instance.didLeave.and.returnValue(Observable.of({}));
+		instance.willUnload.and.returnValue(Observable.of({}));
+		instance.didUnload.and.returnValue(Observable.of({}));
+		instance.dismiss.and.returnValue(Promise.resolve());
+		instance.enableBack.and.returnValue(true);
+		instance.isFirst.and.returnValue(false);
+		instance.isLast.and.returnValue(false);
+		instance.pageRef.and.returnValue({});
+		instance.getContent.and.returnValue({});
+		instance.hasNavbar.and.returnValue(true);
 
 		instance['component'] = {};
 		instance['index'] = 0;
