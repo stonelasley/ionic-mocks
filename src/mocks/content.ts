@@ -1,7 +1,5 @@
-import { Content }  from 'ionic-angular';
-
 export class ContentMock {
-	public static instance(): Content {
+	public static instance(): any {
 		let instance = jasmine.createSpyObj('Content', ['addImg', 'getContentDimensions', 'getFixedElement', 'resize', 'scrollTo', 'scrollToBottom', 'scrollToTop']);
 		instance['contentBottom'] = 10;
 		instance['contentHeight'] = 10;

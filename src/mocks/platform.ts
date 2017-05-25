@@ -1,7 +1,5 @@
-import { Platform }   from 'ionic-angular';
-
 export class PlatformMock {
-	public static instance(): Platform {
+	public static instance(): any {
 
 		let instance = jasmine.createSpyObj('Platform', [
 			'dir',

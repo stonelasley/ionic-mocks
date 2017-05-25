@@ -1,12 +1,7 @@
 import { TabMock } from './tab';
-import { Tabs } from 'ionic-angular';
 
 export class TabsMock {
-	public static instance(): Tabs {
-		let defaultTab = TabMock.instance();
-		let selectedTab = TabMock.instance();
-		let previousTab = TabMock.instance();
-
+	public static instance(defaultTab?: TabMock, selectedTab?: TabMock, previousTab?: TabMock): any {
 		let instance = jasmine.createSpyObj('Tabs', [
 			'select',
 			'getSelected',
@@ -15,9 +10,9 @@ export class TabsMock {
 			'viewCtrl'
 		]);
 
-		instance.select.and.returnValue(defaultTab);
-		instance.getSelected.and.returnValue(selectedTab);
-		instance.previousTab.and.returnValue(previousTab);
+		instance.select.and.returnValue(defaultTab || TabMock.instance());
+		instance.getSelected.and.returnValue(selectedTab || TabMock.instance());
+		instance.previousTab.and.returnValue(previousTab || TabMock.instance());
 
 		return instance;
 	}

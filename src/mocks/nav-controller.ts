@@ -1,7 +1,5 @@
-import { NavController } from 'ionic-angular';
-
 export class NavControllerMock {
-	public static instance(): NavController {
+	public static instance(): any {
 
 		let instance = jasmine.createSpyObj('navController', [
 			'push',

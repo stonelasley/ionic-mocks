@@ -1,8 +1,7 @@
-import { Menu } from 'ionic-angular';
 import { uuid } from 'uuid';
 
 export class MenuMock {
-	public static instance(): Menu {
+	public static instance(): any {
 		let instance = jasmine.createSpyObj('Menu', ['blank']);
 		instance['content'] = "menu content";
 		instance['enabled'] = true;

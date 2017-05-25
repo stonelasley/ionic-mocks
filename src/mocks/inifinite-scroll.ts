@@ -1,8 +1,5 @@
-import { InfiniteScroll }   from 'ionic-angular';
-
 export class InfiniteScrollMock {
-	public static instance(): InfiniteScroll {
-
+	public static instance(): any {
 		return jasmine.createSpyObj('InfiniteScroll', ['complete', 'enable', 'waitFor']);
 	}
 }

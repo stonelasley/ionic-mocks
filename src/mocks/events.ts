@@ -1,7 +1,5 @@
-import { Events } from 'ionic-angular';
-
 export class EventsMock {
-	public static instance(): Events {
+	public static instance(): any {
 		return jasmine.createSpyObj('events', ['subscribe', 'publish', 'unsubscribe']);
 	}
 }

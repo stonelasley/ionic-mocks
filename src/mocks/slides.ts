@@ -1,7 +1,5 @@
-import { Slides }   from 'ionic-angular';
-
 export class SlidesMock {
-	public static instance(): Slides {
+	public static instance(): any {
 
 		let instance = jasmine.createSpyObj('Slides', [
 			'controlBy',

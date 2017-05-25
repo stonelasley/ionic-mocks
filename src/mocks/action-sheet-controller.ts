@@ -1,8 +1,7 @@
-import { ActionSheet, ActionSheetController }   from 'ionic-angular';
-import { ActionSheetMock }                      from './action-sheet';
+import { ActionSheetMock } from './action-sheet';
 
 export class ActionSheetControllerMock {
-	public static instance(actionSheet?: ActionSheet): ActionSheetController {
+	public static instance(actionSheet?: ActionSheetMock): any {
 
 		let instance = jasmine.createSpyObj('ActionSheetController', ['create']);
 		instance.create.and.returnValue(actionSheet || ActionSheetMock.instance());

@@ -1,7 +1,5 @@
-import { Haptic } from 'ionic-angular';
-
 export class HapticMock {
-	public static instance(): Haptic {
+	public static instance(): any {
 		let instance = jasmine.createSpyObj('Haptic', ['available',
 			'gestureSelectionChanged',
 			'gestureSelectionEnd',

@@ -1,9 +1,8 @@
-import { App }                  from "ionic-angular";
 import { Observable }           from 'rxjs';
 import { NavControllerMock }    from "./nav-controller";
 
 export class AppMock {
-	public static instance(navCtrl?: NavControllerMock, viewObservable?: Observable<any>): App {
+	public static instance(navCtrl?: NavControllerMock, viewObservable?: Observable<any>): any {
 
 		let instance = jasmine.createSpyObj('App', [
 			'getActiveNav',
