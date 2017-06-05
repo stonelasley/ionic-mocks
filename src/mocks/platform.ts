@@ -35,7 +35,7 @@ export class PlatformMock {
 		instance.ready.and.returnValue(Promise.resolve());
 		instance.registerBackButtonAction.and.returnValue(() => {});
 		instance.url.and.returnValue('');
-		instance.versions.and.returnValue([]);
+		instance.version.and.returnValue([]);
 		instance.width.and.returnValue(0);
 
 		return instance;
