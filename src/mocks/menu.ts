@@ -1,11 +1,9 @@
-import { uuid } from 'uuid';
-
 export class MenuMock {
 	public static instance(): any {
 		let instance = jasmine.createSpyObj('Menu', ['blank']);
 		instance['content'] = "menu content";
 		instance['enabled'] = true;
-		instance['id'] = uuid();
+		instance['id'] = 'menuId';
 		instance['persistent'] = true;
 		instance['side'] = "left";
 		instance['swipeEnabled'] = true;
