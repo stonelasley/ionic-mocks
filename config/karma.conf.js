@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = function(config) {
-	config.set({
+	var cfg ={
 		basePath: '',
 		frameworks: ['jasmine', 'karma-typescript'],
 		reporters: ['progress', 'karma-typescript'],
@@ -33,7 +33,7 @@ module.exports = function(config) {
 				file: 'coverage-final.json'
 			}]
 		}
-	});
+	};
 	if (process.env.TRAVIS) {
 		cfg.browsers = ['Chrome_travis_ci'];
 	}
