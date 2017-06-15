@@ -39,8 +39,9 @@ jspm_packages
 # Idea editors
 .idea
 
-# Dist
-dist
-lib
+#built
+src/**/*.d.ts
+src/**/*.js
+src/**/*.js.map
 
 .DS_Store
