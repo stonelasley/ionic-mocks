@@ -16,6 +16,12 @@ module.exports = function(config) {
 				lib: ["es2016", "dom"]
 			}
 		},
+		customLaunchers: {
+			Chrome_travis_ci: {
+				base: 'Chrome',
+				flags: ['--no-sandbox']
+			}
+		},
 		coverageReporter: {
 			dir: '../coverage/',
 			reporters: [{
@@ -28,4 +34,9 @@ module.exports = function(config) {
 			}]
 		}
 	});
+	if (process.env.TRAVIS) {
+		cfg.browsers = ['Chrome_travis_ci'];
+	}
+
+	config.set(cfg);
 };
