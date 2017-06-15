@@ -9,6 +9,7 @@
     "removeComments": false,
     "noImplicitAny": false,
     "rootDir": "./src",
+    "outDir": "./dist",
     "declaration": true,
     "lib": [
       "es2016",
