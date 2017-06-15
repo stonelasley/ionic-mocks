@@ -10,13 +10,16 @@
     "noImplicitAny": false,
     "rootDir": "./src",
     "declaration": true,
+    "lib": [
+      "es2016",
+      "dom"
+    ],
     "types": [
       "jasmine",
       "node"
     ]
   },
   "exclude": [
-    "node_modules",
-    "dist"
+    "node_modules"
   ]
 }

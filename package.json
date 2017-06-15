@@ -8,6 +8,9 @@
   "author": "Stone C. Lasley",
   "license": "MIT",
   "scripts": {
+    "clean": "rimraf coverage src/**/*.d.ts  src/**/*.js src/**/*.map",
+    "pretest": "npm run clean",
+    "test": "karma start",
     "build": "tsc -d",
     "prepublish": "npm run build",
     "version": "npm run build && git add .",
@@ -15,11 +18,19 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
-    "@types/node": "^7.0.12",
+    "@types/core-js": "^0.9.41",
     "@types/jasmine": "^2.5.47",
+    "@types/node": "^7.0.12",
+    "core-js": "^2.4.1",
     "jasmine": "^2.5.3",
-    "rxjs": "^5.0.0-beta.12",
-    "typescript": "^2.0.9",
-    "semantic-release": "^6.3.6"
+    "jasmine-core": "^2.6.3",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-typescript": "^3.0.4",
+    "rimraf": "^2.6.1",
+    "rxjs": "5.1.1",
+    "semantic-release": "^6.3.6",
+    "typescript": "^2.0.9"
   }
 }
