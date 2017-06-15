@@ -1,7 +1,7 @@
 {
   "name": "ionic-mocks",
   "version": "0.0.0-development",
-  "description": "Pre-mocked Ionic2 Objects",
+  "description": "Stubbed and Pre-mocked Ionic2 Objects",
   "repository": "git@github.com:stonelasley/ionic-mocks.git",
   "main": "./src/index.ts",
   "typings": "./dist/index.d.ts",
