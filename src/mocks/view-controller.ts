@@ -21,7 +21,11 @@ export class ViewControllerMock {
 			'contentRef',
 			'hasNavbar',
 			'setBackButtonText',
-			'showBackButton'
+			'showBackButton',
+			'_setHeader',
+			'_setNavbar',
+			'_setIONContent',
+			'_setIONContentRef'
 		]);
 
 		instance.willEnter.and.returnValue(Observable.of({}));
