@@ -105,3 +105,14 @@ describe('IonicComponent', () => {
     });
 });
 ```
+
+#### Provide Mocks in TestingModule
+```typescript
+TestBed.configureTestingModule({
+    imports: [IonicModule, AnotherModule],
+    declarations: [MyComponent],
+    providers: [
+            {provide: ViewController, useFactory: () => ViewControllerMock.instance()}                          
+    ]
+});
+```
