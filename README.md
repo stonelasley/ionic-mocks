@@ -11,6 +11,7 @@ to be used in your tests it should be safe to pull into a project.
 - AlertController
 - App
 - Content
+- Config
 - Events
 - Haptic
 - InifiniteScroll
