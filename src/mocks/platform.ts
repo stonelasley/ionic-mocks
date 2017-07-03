@@ -21,7 +21,12 @@ export class PlatformMock {
 			'testUserAgent',
 			'url',
 			'version',
-			'width'
+			'width',
+			'doc',
+			'registerListener',
+			'win',
+			'getActiveElement',
+			'raf'
 		]);
 
 		instance.dir.and.returnValue('');
@@ -37,6 +42,10 @@ export class PlatformMock {
 		instance.url.and.returnValue('');
 		instance.version.and.returnValue([]);
 		instance.width.and.returnValue(0);
+		instance.doc.and.returnValue(document);
+		instance.win.and.returnValue(window);
+		instance.getActiveElement.and.returnValue(document['activeElement']);
+		instance.raf.and.returnValue(1);
 
 		return instance;
 	}
