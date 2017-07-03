@@ -16,6 +16,7 @@ to be used in your tests it should be safe to pull into a project.
 - Form
 - Haptic
 - InifiniteScroll
+- ItemSliding
 - Keyboard
 - Loading
 - LoadingController
