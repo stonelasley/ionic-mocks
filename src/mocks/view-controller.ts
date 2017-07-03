@@ -62,22 +62,23 @@ export class ViewControllerMock {
 		instance.getNav.and.returnValue(NavControllerMock.instance());
 		instance.getIONContent.and.returnValue({});
 
-		instance.writeReady.and.returnValue({
+		instance['writeReady'] ={
 			emit(): void {
 
 			},
 			subscribe(): any {
 
 			}
-		});
-		instance.readReady.and.returnValue({
+		};
+
+		instance['readReady'] ={
 			emit(): void {
 
 			},
 			subscribe(): any {
 
 			}
-		});
+		};
 
 		instance['component'] = {};
 		instance['data'] = NavParamsMock.instance();
