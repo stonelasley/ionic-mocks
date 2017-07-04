@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/stonelasley/ionic-mocks.svg?branch=master)](https://travis-ci.org/stonelasley/ionic-mocks)
 
 # ionic-mocks
-Simple test doubles for Ionic 2+ using Jasmine Spy Objects 
+Simple test doubles for Ionic 2+ using Jasmine Spy Objects
 
 This project is still very early in development and there are several things I'm sorting out. However since this is only meant
 to be used in your tests it should be safe to pull into a project.
@@ -30,6 +30,7 @@ to be used in your tests it should be safe to pull into a project.
 - Popover
 - PopoverController
 - NavController
+- Nav
 - NavParams
 - Tab
 - Tabs
@@ -77,7 +78,7 @@ describe('MyClass', () => {
 });
 ```
 
-### Pre-mocked return types 
+### Pre-mocked return types
 ```typescript
 import {Events, AlertController, Alert} from 'ionic-angular';
 import {EventsMock, AlertControllerMock, AlertMock} from 'ionic-mocks';
@@ -111,13 +112,13 @@ describe('MyComponent', () => {
 });
 ```
 
-### Override ionic providers in TestingModule 
+### Override ionic providers in TestingModule
 ```typescript
 TestBed.configureTestingModule({
     imports: [IonicModule],
     declarations: [MyComponentUnderTest],
     providers: [
-            {provide: ViewController, useFactory: () => ViewControllerMock.instance()}                          
+            {provide: ViewController, useFactory: () => ViewControllerMock.instance()}
     ]
 });
 ```
