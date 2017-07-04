@@ -17,6 +17,7 @@ export { MenuControllerMock }           from './mocks/menu-controller';
 export { ModalMock }                    from './mocks/modal';
 export { ModalControllerMock }          from './mocks/modal-controller';
 export { NavControllerMock }            from './mocks/nav-controller';
+export { NavMock }                      from './mocks/nav';
 export { NavParamsMock}                 from './mocks/nav-params';
 export { TabMock }                      from './mocks/tab';
 export { TabsMock }                     from './mocks/tabs';
@@ -27,5 +28,6 @@ export { PopoverControllerMock }        from './mocks/popover-controller';
 export { ToastMock }                    from './mocks/toast';
 export { ToastControllerMock }          from './mocks/toast-controller';
 export { SlidesMock }                   from './mocks/slides';
+export { StatusBarMock }                from './mocks/status-bar';
 export { ViewControllerMock }           from './mocks/view-controller';
 
