@@ -19,7 +19,6 @@ to be used in your tests it should be safe to pull into a project.
 - Haptic
 - InfiniteScroll
 - ItemSliding
-- Keyboard
 - Loading
 - LoadingController
 - Menu
@@ -38,6 +37,10 @@ to be used in your tests it should be safe to pull into a project.
 - Toast
 - ToastController
 - ViewController
+
+## Native Plugins
+- Keyboard
+- Splashscreen
 
 ## Installation
 ```bash
