@@ -4,16 +4,12 @@
   "description": "Stubbed and Pre-mocked Ionic2 Objects",
   "repository": "git@github.com:stonelasley/ionic-mocks.git",
   "main": "./src/index.ts",
-  "typings": "./dist/index.d.ts",
+  "typings": "./src/index.ts",
   "author": "Stone C. Lasley",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf coverage dist src/**/*.d.ts  src/**/*.js src/**/*.map",
-    "pretest": "npm run clean",
     "test": "karma start",
-    "prebuild": "npm run clean",
     "build": "tsc -d",
-    "prepublish": "npm run build",
     "version": "npm run build && git add .",
     "postversion": "git push && git push --tags && npm publish",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"

@@ -1,2 +1,2 @@
-export * from './mocks';
 export * from './native';
+export * from './mocks'
