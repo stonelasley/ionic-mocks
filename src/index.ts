@@ -1,2 +1,2 @@
 export * from './native';
-export * from './mocks'
+export * from './angular'
