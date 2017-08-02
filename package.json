@@ -9,6 +9,7 @@
   "license": "MIT",
   "scripts": {
     "test": "karma start",
+    "lint": "tslint ./src/**/*.ts",
     "build": "tsc -d",
     "version": "git add .",
     "postversion": "git push && git push --tags && npm publish",
@@ -26,6 +27,8 @@
     "rimraf": "^2.6.1",
     "rxjs": "5.1.1",
     "semantic-release": "^6.3.6",
+    "tslint": "^5.5.0",
+    "tslint-ionic-rules": "0.0.11",
     "typescript": "^2.0.9"
   }
 }

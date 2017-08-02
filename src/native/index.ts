@@ -1,8 +1,8 @@
-import { SplashScreenMock } from './splash-screen';
-import { KeyboardMock }     from './keyboard';
-import { StatusBarMock }    from '../native/status-bar';
+import {SplashScreenMock} from './splash-screen';
+import {KeyboardMock}     from './keyboard';
+import {StatusBarMock}    from './status-bar';
 export {
-	KeyboardMock,
-	SplashScreenMock,
-	StatusBarMock
-}
+    KeyboardMock,
+    SplashScreenMock,
+    StatusBarMock
+};
