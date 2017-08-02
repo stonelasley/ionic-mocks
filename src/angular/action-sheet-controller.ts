@@ -1,11 +1,11 @@
-import { ActionSheetMock } from './action-sheet';
+import {ActionSheetMock} from './action-sheet';
 
 export class ActionSheetControllerMock {
-	public static instance(actionSheet?: ActionSheetMock): any {
+    public static instance(actionSheet?: ActionSheetMock): any {
 
-		let instance = jasmine.createSpyObj('ActionSheetController', ['create']);
-		instance.create.and.returnValue(actionSheet || ActionSheetMock.instance());
+        let instance = jasmine.createSpyObj('ActionSheetController', ['create']);
+        instance.create.and.returnValue(actionSheet || ActionSheetMock.instance());
 
-		return instance;
-	}
+        return instance;
+    }
 }

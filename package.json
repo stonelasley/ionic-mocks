@@ -1,6 +1,6 @@
 {
   "name": "ionic-mocks",
-  "version": "0.10.2",
+  "version": "0.11.1",
   "description": "Stubbed and Pre-mocked Ionic2 Objects",
   "repository": "git@github.com:stonelasley/ionic-mocks.git",
   "main": "./dist/index.js",
@@ -10,6 +10,7 @@
   "scripts": {
     "test": "karma start",
     "build": "rimraf dist && tsc -d",
+    "lint": "tslint ./src/**/*.ts",
     "version": "git add .",
     "postversion": "git push && git push --tags && npm publish",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -17,6 +18,7 @@
   "devDependencies": {
     "@types/jasmine": "^2.5.47",
     "@types/node": "^8.0.14",
+    "cz-conventional-changelog": "^2.0.0",
     "jasmine": "^2.5.3",
     "jasmine-core": "^2.6.3",
     "karma": "^1.7.0",
@@ -26,6 +28,13 @@
     "rimraf": "^2.6.1",
     "rxjs": "^5.4.2",
     "semantic-release": "^6.3.6",
+    "tslint": "^5.5.0",
+    "tslint-ionic-rules": "0.0.11",
     "typescript": "^2.0.9"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
