@@ -39,7 +39,9 @@ to be used in your tests it should be safe to pull into a project.
 - ViewController
 
 ## Native Plugins
+- 3DTouch
 - Keyboard
+- Network
 - Splashscreen
 
 ## Installation
