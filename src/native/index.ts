@@ -8,5 +8,6 @@ export {
     KeyboardMock,
     SplashScreenMock,
     StatusBarMock,
-    ThreeDeeTouchMock
+    ThreeDeeTouchMock,
+    NetworkMock
 }
