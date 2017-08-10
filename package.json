@@ -12,6 +12,7 @@
     "build": "rimraf dist && tsc -d",
     "lint": "tslint ./src/**/*.ts",
     "version": "git add .",
+    "prepublish": "npm run build",
     "postversion": "git push && git push --tags && npm publish",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
