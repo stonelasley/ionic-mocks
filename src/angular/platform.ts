@@ -26,7 +26,10 @@ export class PlatformMock {
             'registerListener',
             'win',
             'getActiveElement',
-            'raf'
+            'raf',
+            'hasFocus',
+            'getElementComputedStyle',
+            'timeout'
         ]);
 
         instance.dir.and.returnValue('');
@@ -38,8 +41,8 @@ export class PlatformMock {
         instance.lang.and.returnValue('en');
         instance.platforms.and.returnValue([]);
         instance.ready.and.returnValue(Promise.resolve());
-        instance.registerBackButtonAction.and.returnValue(() => {
-        });
+        instance.registerBackButtonAction.and.callFake(callback => callback);
+        instance.registerListener.and.callFake(callback => callback);
         instance.url.and.returnValue('');
         instance.version.and.returnValue([]);
         instance.width.and.returnValue(0);
@@ -47,7 +50,14 @@ export class PlatformMock {
         instance.win.and.returnValue(window);
         instance.getActiveElement.and.returnValue(document['activeElement']);
         instance.raf.and.returnValue(1);
-
+        instance.hasFocus.and.returnValue(true);
+        instance.getElementComputedStyle.and.returnValue({
+            paddingLeft: '10',
+            paddingTop: '10',
+            paddingRight: '10',
+            paddingBottom: '10'
+        });
+        instance.timeout.and.callFake((callback: any, timer: number) => setTimeout(callback, timer));
         return instance;
     }
 }
