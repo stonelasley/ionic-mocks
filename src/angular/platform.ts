@@ -44,6 +44,7 @@ export class PlatformMock {
         instance.version.and.returnValue([]);
         instance.width.and.returnValue(0);
         instance.doc.and.returnValue(document);
+        instance.registerListener.and.returnValue(() => {});
         instance.win.and.returnValue(window);
         instance.getActiveElement.and.returnValue(document['activeElement']);
         instance.raf.and.returnValue(1);
