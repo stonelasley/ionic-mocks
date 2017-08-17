@@ -20,10 +20,8 @@ describe('PlatformMock', () => {
     });
 
     describe('registerListener', () => {
-        let callback = () => 'foo';
-
-        it('should return function that was passed in', () => {
-            expect(classUnderTest.registerListener(callback).call()).toEqual('foo');
+        it('should return function', () => {
+            expect(classUnderTest.registerListener()).toEqual(jasmine.any(Function));
         });
     });
 });

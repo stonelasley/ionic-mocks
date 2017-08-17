@@ -41,8 +41,8 @@ export class PlatformMock {
         instance.lang.and.returnValue('en');
         instance.platforms.and.returnValue([]);
         instance.ready.and.returnValue(Promise.resolve());
-        instance.registerBackButtonAction.and.callFake(callback => callback);
-        instance.registerListener.and.callFake(callback => callback);
+        instance.registerBackButtonAction.and.returnValue(() => {});
+        instance.registerListener.and.returnValue(() => {});
         instance.url.and.returnValue('');
         instance.version.and.returnValue([]);
         instance.width.and.returnValue(0);
@@ -57,7 +57,7 @@ export class PlatformMock {
             paddingRight: '10',
             paddingBottom: '10'
         });
-        instance.timeout.and.callFake((callback: any, timer: number) => setTimeout(callback, timer));
+        instance.timeout.and.returnValue((callback: any, timer: number) => setTimeout(callback, timer));
         return instance;
     }
 }
