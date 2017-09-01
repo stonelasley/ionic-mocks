@@ -131,3 +131,28 @@ TestBed.configureTestingModule({
     ]
 });
 ```
+
+### Frequently Asked Questions:
+
+#### Q: I am receiving a `TypeError: jit__object_Object_33 is not a function` error. What does that mean?
+
+Answer: This means you've done something wrong. Take a look at this example:
+
+```ts
+// DO NOT DO THIS
+// USING useClass INSTEAD OF useFactory IS INCORRECT
+{ provide: App, useClass: AppMock }
+```
+```ts
+// DO NOT DO THIS
+// USING useFactory WITHOUT THE FAT ARROW SYNTAX IS INCORRECT
+{ provide: App, useFactory: AppMock.instance() }
+```
+
+Make sure you are using the `useFactory` property name and using the fat arrow function as the value:
+
+```ts
+// DO THIS
+{ provide: App, useClass: () => AppMock.instance() }
+```
+
