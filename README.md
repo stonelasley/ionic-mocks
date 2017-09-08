@@ -42,10 +42,11 @@ to be used in your tests it should be safe to pull into a project.
 
 ## Native Plugins
 - 3DTouch
+- GoogleAnalyics
 - Keyboard
 - Network
 - Splashscreen
-- Network
+- StatusBar
 
 ## Installation
 ```bash
