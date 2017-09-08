@@ -30,7 +30,6 @@ to be used in your tests it should be safe to pull into a project.
 - Popover
 - PopoverController
 - NavController
-- Nav
 - NavParams
 - StatusBar
 - Storage
