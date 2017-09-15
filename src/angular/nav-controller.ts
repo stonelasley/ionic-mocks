@@ -1,4 +1,5 @@
 import {ViewControllerMock} from './view-controller';
+import {Observable} from 'rxjs/Observable';
 
 export class NavControllerMock {
     public static instance(): any {
@@ -41,7 +42,13 @@ export class NavControllerMock {
             'isSwipeBackEnabled',
             'dismissPageChangeViews',
             'setViewPort',
-            'resize'
+            'resize',
+            'viewDidEnter',
+            'viewDidLeave',
+            'viewDidLoad',
+            'viewWillEnter',
+            'viewWillLeave',
+            'viewWillUnload'
         ]);
 
         instance.goToRoot.and.returnValue(Promise.resolve());
@@ -75,6 +82,12 @@ export class NavControllerMock {
         instance.length.and.returnValue(0);
         instance.getViews.and.returnValue([]);
         instance.isSwipeBackEnabled.and.returnValue(true);
+        instance.viewDidEnter = Observable.of();
+        instance.viewDidLeave = Observable.of();
+        instance.viewDidLoad = Observable.of();
+        instance.viewWillEnter = Observable.of();
+        instance.viewWillLeave = Observable.of();
+        instance.viewWillUnload = Observable.of();
 
         return instance;
     }
