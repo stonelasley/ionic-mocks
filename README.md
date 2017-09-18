@@ -153,6 +153,6 @@ Make sure you are using the `useFactory` property name and using the fat arrow f
 
 ```ts
 // DO THIS
-{ provide: App, useClass: () => AppMock.instance() }
+{ provide: App, useFactory: () => AppMock.instance() }
 ```
 
