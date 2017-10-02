@@ -131,7 +131,15 @@ TestBed.configureTestingModule({
     ]
 });
 ```
+# Contributing
+This project has a long way to go and is full of opportunities to contribute. 
+I am back in school and working so for the rest of the year expect my responsiveness on this project to be slow. If anyone is up to helping vet PRs please message me. sclarklasley@gmail.com
 
+## Contributors
+  - [Felix Whittmann](https://github.com/hfwittmann)
+  - [Leif Wells](https://github.com/leifwells)
+  - [Damir Arh](https://github.com/damirarh)
+  - [Rvdleun](https://github.com/rvdleun)
 ### Frequently Asked Questions:
 
 #### Q: I am receiving a `TypeError: jit__object_Object_33 is not a function` error. What does that mean?
@@ -155,4 +163,3 @@ Make sure you are using the `useFactory` property name and using the fat arrow f
 // DO THIS
 { provide: App, useFactory: () => AppMock.instance() }
 ```
-
