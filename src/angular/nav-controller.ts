@@ -6,7 +6,7 @@ export class NavControllerMock {
         let instance: any = jasmine.createSpyObj('NavController', [
             'goToRoot',
             'initPane',
-            'pangeChanged',
+            'paneChanged',
             'push',
             'insert',
             'insertPage',
