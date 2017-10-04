@@ -1,12 +1,9 @@
 import {Observable}           from 'rxjs';
 import {NavParamsMock}        from './nav-params';
-import {NavControllerMock}    from './nav-controller';
 
 export class ViewControllerMock {
-    private static staticInstance: null;
 
     public static instance(): any {
-        if(ViewControllerMock.staticInstance == null) {
             let instance = jasmine.createSpyObj('ViewController', [
                 'willEnter',
                 'didEnter',
@@ -61,7 +58,7 @@ export class ViewControllerMock {
             instance.hasNavbar.and.returnValue(true);
             instance.index.and.returnValue(true);
             instance.subscribe.and.returnValue(Observable.of({}));
-            instance.getNav.and.returnValue(NavControllerMock.instance());
+            instance.getNav.and.returnValue({});
             instance.getIONContent.and.returnValue({});
 
             instance['writeReady'] = {
@@ -87,9 +84,6 @@ export class ViewControllerMock {
             instance['instance'] = {};
             instance['id'] = '';
 
-            ViewControllerMock.staticInstance = instance;
-        }
-
-        return ViewControllerMock.staticInstance;
+            return instance;
     }
 }

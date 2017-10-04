@@ -1,4 +1,3 @@
-import {ViewControllerMock} from './view-controller';
 import {Observable} from 'rxjs/Observable';
 
 export class NavControllerMock {
@@ -54,7 +53,7 @@ export class NavControllerMock {
         instance.goToRoot.and.returnValue(Promise.resolve());
         instance.initPane.and.returnValue(1);
 
-        instance['root'] = ViewControllerMock.instance();
+        instance['root'] = {};
         instance['rootParams'] = {};
 
         instance.push.and.returnValue(Promise.resolve());
@@ -72,12 +71,12 @@ export class NavControllerMock {
         instance.canSwipeBack.and.returnValue(true);
         instance.canGoBack.and.returnValue(true);
         instance.isTransitioning.and.returnValue(false);
-        instance.getActive.and.returnValue(ViewControllerMock.instance());
+        instance.getActive.and.returnValue({});
         instance.isActive.and.returnValue(true);
-        instance.getByIndex.and.returnValue(ViewControllerMock.instance());
-        instance.getPrevious.and.returnValue(ViewControllerMock.instance());
-        instance.first.and.returnValue(ViewControllerMock.instance());
-        instance.last.and.returnValue(ViewControllerMock.instance());
+        instance.getByIndex.and.returnValue({});
+        instance.getPrevious.and.returnValue({});
+        instance.first.and.returnValue({});
+        instance.last.and.returnValue({});
         instance.indexOf.and.returnValue(0);
         instance.length.and.returnValue(0);
         instance.getViews.and.returnValue([]);
