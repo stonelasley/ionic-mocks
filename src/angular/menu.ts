@@ -1,6 +1,8 @@
+import { createSpyObj } from '../utilities/create-spy';
+
 export class MenuMock {
     public static instance(): any {
-        let instance = jasmine.createSpyObj('Menu', ['blank', 'open', 'close']);
+        let instance = createSpyObj('Menu', ['blank', 'open', 'close']);
         instance['content'] = 'menu content';
         instance['enabled'] = true;
         instance['id'] = 'menuId';

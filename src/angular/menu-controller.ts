@@ -1,9 +1,10 @@
-import {MenuMock} from './menu';
+import { createSpyObj } from '../utilities/create-spy';
+import { MenuMock } from './menu';
 
 export class MenuControllerMock {
     public static instance(menu?: MenuMock): any {
         let m = menu || MenuMock.instance();
-        let instance = jasmine.createSpyObj('MenuController', ['close', 'enable', 'get', 'getMenus', 'getOpen', 'isEnabled', 'isOpen', 'open', 'swipeEnable', 'toggle']);
+        let instance = createSpyObj('MenuController', ['close', 'enable', 'get', 'getMenus', 'getOpen', 'isEnabled', 'isOpen', 'open', 'swipeEnabled', 'toggle']);
         instance.close.and.returnValue(Promise.resolve());
         instance.enable.and.returnValue(m);
         instance.get.and.returnValue(m);

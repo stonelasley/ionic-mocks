@@ -1,6 +1,8 @@
+import { createSpyObj } from '../utilities/create-spy';
+
 export class FormMock {
     public static instance(): any {
-        let instance = jasmine.createSpyObj('Form', [
+        let instance = createSpyObj('Form', [
             'register',
             'nextId',
             'deregister',

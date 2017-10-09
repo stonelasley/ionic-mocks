@@ -1,8 +1,9 @@
-import {TabMock} from './tab';
+import { TabMock } from './tab';
+import { createSpyObj } from '../utilities/create-spy';
 
 export class TabsMock {
     public static instance(defaultTab?: TabMock, selectedTab?: TabMock, previousTab?: TabMock): any {
-        let instance = jasmine.createSpyObj('Tabs', [
+        let instance = createSpyObj('Tabs', [
             'select',
             'getSelected',
             'ngOnDestroy',
