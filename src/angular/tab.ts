@@ -1,5 +1,7 @@
+import { createSpyObj } from '../utilities/create-spy';
+
 export class TabMock {
     public static instance(): any {
-        return jasmine.createSpyObj('Tab', ['linker']);
+        return createSpyObj('Tab', ['linker']);
     }
 }

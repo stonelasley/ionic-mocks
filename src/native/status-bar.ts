@@ -1,6 +1,8 @@
+import { createSpyObj } from '../utilities/create-spy';
+
 export class StatusBarMock {
     public static instance(): any {
-        let instance: any = jasmine.createSpyObj('StatusBar', [
+        let instance: any = createSpyObj('StatusBar', [
             'overlaysWebView',
             'styleDefault',
             'styleLightContent',
