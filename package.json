@@ -1,11 +1,22 @@
 {
   "name": "ionic-mocks",
-  "version": "0.13.0",
-  "description": "Stubbed and Pre-mocked Ionic2 Objects",
+  "version": "1.0.3",
+  "description": "Stubbed and Pre-mocked Ionic2+ Objects",
   "repository": "git@github.com:stonelasley/ionic-mocks.git",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "author": "Stone C. Lasley",
+  "keywords": [
+    "ionic",
+    "ionic2",
+    "ionic3",
+    "mocks",
+    "mock",
+    "doubles"
+  ],
+  "bugs": {
+    "url": "https://github.com/stonelasley/ionic-mocks"
+  },
   "license": "MIT",
   "scripts": {
     "test": "karma start",

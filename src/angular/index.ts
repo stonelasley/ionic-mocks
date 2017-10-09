@@ -16,7 +16,6 @@ import {MenuControllerMock}           from './menu-controller';
 import {ModalMock}                    from './modal';
 import {ModalControllerMock}          from './modal-controller';
 import {NavControllerMock}            from './nav-controller';
-import {NavMock}                      from './nav';
 import {NavParamsMock}                 from './nav-params';
 import {TabMock}                      from './tab';
 import {TabsMock}                     from './tabs';
@@ -48,7 +47,6 @@ export {
     ModalMock,
     ModalControllerMock,
     NavControllerMock,
-    NavMock,
     NavParamsMock,
     TabMock,
     TabsMock,
