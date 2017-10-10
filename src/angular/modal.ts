@@ -4,8 +4,8 @@ export class ModalMock {
         let instance = jasmine.createSpyObj('Modal', ['present', 'dismiss', 'onDidDismiss']);
         instance.present.and.returnValue(Promise.resolve());
         
-        instance.dismiss.and.callFake((myArgs) => {
-            _dismissCallback(myArgs);
+        instance.dismiss.and.callFake((data) => {
+            _dismissCallback(data);
             return Promise.resolve();
         });
 
