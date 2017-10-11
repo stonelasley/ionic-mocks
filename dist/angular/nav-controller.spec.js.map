@@ -1,1 +1,0 @@
-{"version":3,"file":"nav-controller.spec.js","sourceRoot":"","sources":["../../src/angular/nav-controller.spec.ts"],"names":[],"mappings":";;AAAA,mDAAqD;AACrD,QAAQ,CAAC,mBAAmB,EAAE;IAC7B,EAAE,CAAC,mBAAmB,EAAE;QACvB,IAAI,QAAQ,GAAG,kCAAiB,CAAC,QAAQ,EAAE,CAAC;QAC5C,MAAM,CAAC,QAAQ,CAAC,CAAC,WAAW,EAAE,CAAC;IAChC,CAAC,CAAC,CAAC;AAEJ,CAAC,CAAC,CAAC"}
