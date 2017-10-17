@@ -1,0 +1,1 @@
+{"version":3,"file":"view-controller.spec.js","sourceRoot":"","sources":["../../src/angular/view-controller.spec.ts"],"names":[],"mappings":";;AAAA,qDAAuD;AACvD,QAAQ,CAAC,oBAAoB,EAAE;IAC9B,EAAE,CAAC,mBAAmB,EAAE;QACvB,IAAI,QAAQ,GAAG,oCAAkB,CAAC,QAAQ,EAAE,CAAC;QAC7C,MAAM,CAAC,QAAQ,CAAC,CAAC,WAAW,EAAE,CAAC;IAChC,CAAC,CAAC,CAAC;AAEJ,CAAC,CAAC,CAAC"}
