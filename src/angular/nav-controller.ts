@@ -2,12 +2,8 @@ import {Observable} from 'rxjs/Observable';
 import { ViewControllerMock } from './view-controller';
 
 export class NavControllerMock {
-    private static staticInstance: null;
 
     public static instance(): any {
-        if (NavControllerMock.staticInstance !== null) {
-            return NavControllerMock.staticInstance;
-        }
 
         let instance: any = jasmine.createSpyObj('NavController', [
             'goToRoot',
@@ -95,8 +91,6 @@ export class NavControllerMock {
         instance.viewWillLeave = Observable.of();
         instance.viewWillUnload = Observable.of();
 
-        NavControllerMock.staticInstance = instance;
-
-        return NavControllerMock.instance();
+        return instance;
     }
 }

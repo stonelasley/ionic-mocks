@@ -47,4 +47,3 @@ src/**/*.js.map
 dist
 
 .DS_Store
-yarn.lock
