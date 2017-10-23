@@ -133,7 +133,7 @@ TestBed.configureTestingModule({
 });
 ```
 # Contributing
-This project has a long way to go and is full of opportunities to contribute. 
+This project has a long way to go and is full of opportunities to contribute.
 I am back in school and working so for the rest of the year expect my responsiveness on this project to be slow. If anyone is up to helping vet PRs please message me. sclarklasley@gmail.com
 
 ## Contributors
@@ -141,6 +141,8 @@ I am back in school and working so for the rest of the year expect my responsive
   - [Leif Wells](https://github.com/leifwells)
   - [Damir Arh](https://github.com/damirarh)
   - [Rvdleun](https://github.com/rvdleun)
+  - [Andrey Zakharov](https://github.com/enstain)
+
 ### Frequently Asked Questions:
 
 #### Q: I am receiving a `TypeError: jit__object_Object_33 is not a function` error. What does that mean?

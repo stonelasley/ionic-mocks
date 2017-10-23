@@ -92,6 +92,6 @@ export class ViewControllerMock {
 
         ViewControllerMock.staticInstance = instance;
 
-        return ViewControllerMock.instance();       
+        return ViewControllerMock.instance();
     }
 }

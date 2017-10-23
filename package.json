@@ -1,11 +1,11 @@
 {
-  "name": "ionic-mocks",
-  "version": "1.0.2",
-  "description": "Stubbed and Pre-mocked Ionic2+ Objects",
-  "repository": "git@github.com:stonelasley/ionic-mocks.git",
+  "name": "ionic-mocks-ens",
+  "version": "1.0.0",
+  "description": "Stubbed and Pre-mocked Ionic2+ Objects, based on stonelasley/ionic-mocks",
+  "repository": "git@github.com:enstain/ionic-mocks.git",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
-  "author": "Stone C. Lasley",
+  "author": "Stone C. Lasley; Andrey Zakharov",
   "keywords": [
     "ionic",
     "ionic2",
@@ -15,7 +15,7 @@
     "doubles"
   ],
   "bugs": {
-    "url": "https://github.com/stonelasley/ionic-mocks"
+    "url": "https://github.com/enstain/ionic-mocks"
   },
   "license": "MIT",
   "scripts": {
