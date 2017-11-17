@@ -1,11 +1,11 @@
 {
-  "name": "ionic-mocks",
-  "version": "1.0.3",
+  "name": "ionic-mocks-ens",
+  "version": "1.0.4",
   "description": "Stubbed and Pre-mocked Ionic2+ Objects",
-  "repository": "git@github.com:stonelasley/ionic-mocks.git",
+  "repository": "git@github.com:enstain/ionic-mocks.git",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
-  "author": "Stone C. Lasley",
+  "author": "Stone C. Lasley; Andrey Zakharov",
   "keywords": [
     "ionic",
     "ionic2",
