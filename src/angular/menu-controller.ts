@@ -3,7 +3,7 @@ import {MenuMock} from './menu';
 export class MenuControllerMock {
     public static instance(menu?: MenuMock): any {
         let m = menu || MenuMock.instance();
-        let instance = jasmine.createSpyObj('MenuController', ['close', 'enable', 'get', 'getMenus', 'getOpen', 'isEnabled', 'isOpen', 'open', 'swipeEnabled', 'toggle']);
+        let instance = jasmine.createSpyObj('MenuController', ['close', 'enable', 'get', 'getMenus', 'getOpen', 'isEnabled', 'isOpen', 'open', 'swipeEnable', 'toggle']);
         instance.close.and.returnValue(Promise.resolve());
         instance.enable.and.returnValue(m);
         instance.get.and.returnValue(m);
@@ -12,7 +12,7 @@ export class MenuControllerMock {
         instance.isEnabled.and.returnValue(true);
         instance.isOpen.and.returnValue(false);
         instance.open.and.returnValue(Promise.resolve());
-        instance.swipeEnabled.and.returnValue(m);
+        instance.swipeEnable.and.returnValue(m);
         instance.toggle.and.returnValue(Promise.resolve());
 
         return instance;
