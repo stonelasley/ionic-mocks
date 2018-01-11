@@ -1,7 +1,7 @@
-import { Observable } from 'rxjs';
-import { NavParamsMock } from './nav-params';
-import { NavControllerMock } from './nav-controller';
 import { createSpyObj } from '../utilities/create-spy';
+import { ArrayObservable }      from 'rxjs/observable/ArrayObservable';
+import { NavParamsMock }        from './nav-params';
+import { NavControllerMock }    from './nav-controller';
 
 export class ViewControllerMock {
 	private static staticInstance: any = null;
@@ -87,12 +87,12 @@ export class ViewControllerMock {
 		instance.length.and.returnValue(0);
 		instance.getViews.and.returnValue([]);
 		instance.isSwipeBackEnabled.and.returnValue(true);
-		instance.viewDidEnter = Observable.of();
-		instance.viewDidLeave = Observable.of();
-		instance.viewDidLoad = Observable.of();
-		instance.viewWillEnter = Observable.of();
-		instance.viewWillLeave = Observable.of();
-		instance.viewWillUnload = Observable.of();
+		instance.viewDidEnter = ArrayObservable.of();
+		instance.viewDidLeave = ArrayObservable.of();
+		instance.viewDidLoad = ArrayObservable.of();
+		instance.viewWillEnter = ArrayObservable.of();
+		instance.viewWillLeave = ArrayObservable.of();
+		instance.viewWillUnload = ArrayObservable.of();
 	}
 
 	public static instance(): any {
@@ -133,12 +133,12 @@ export class ViewControllerMock {
 			'_setIONContentRef'
 		]);
 
-		instance.willEnter.and.returnValue(Observable.of({}));
-		instance.didEnter.and.returnValue(Observable.of({}));
-		instance.willLeave.and.returnValue(Observable.of({}));
-		instance.didLeave.and.returnValue(Observable.of({}));
-		instance.willUnload.and.returnValue(Observable.of({}));
-		instance.didUnload.and.returnValue(Observable.of({}));
+		instance.willEnter.and.returnValue(ArrayObservable.of({}));
+		instance.didEnter.and.returnValue(ArrayObservable.of({}));
+		instance.willLeave.and.returnValue(ArrayObservable.of({}));
+		instance.didLeave.and.returnValue(ArrayObservable.of({}));
+		instance.willUnload.and.returnValue(ArrayObservable.of({}));
+		instance.didUnload.and.returnValue(ArrayObservable.of({}));
 		instance.dismiss.and.returnValue(Promise.resolve());
 		instance.onDidDismiss.and.returnValue(Promise.resolve());
 		instance.onWillDismiss.and.returnValue(Promise.resolve());
@@ -150,7 +150,7 @@ export class ViewControllerMock {
 		instance.contentRef.and.returnValue(Promise.resolve());
 		instance.hasNavbar.and.returnValue(true);
 		instance.index.and.returnValue(true);
-		instance.subscribe.and.returnValue(Observable.of({}));
+		instance.subscribe.and.returnValue(ArrayObservable.of({}));
 		instance.getNav.and.returnValue({});
 		instance.getIONContent.and.returnValue({});
 
