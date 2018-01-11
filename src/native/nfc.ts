@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
 
 export class NFCMock {
     public static instance(): any {
@@ -20,19 +20,19 @@ export class NFCMock {
             'stringToBytes',
             'bytesToHexString'
         ]);
-        instance.addNdefListener.and.returnValue(Observable.empty());
-        instance.addTagDiscoveredListener.and.returnValue(Observable.empty());
-        instance.addMimeTypeListener.and.returnValue(Observable.empty());
-        instance.addNdefFormatableListener.and.returnValue(Observable.empty());
-        instance.write.and.returnValue(Observable.empty());
-        instance.makeReadyOnly.and.returnValue(Observable.empty());
-        instance.share.and.returnValue(Observable.empty());
-        instance.unshare.and.returnValue(Observable.empty());
-        instance.erase.and.returnValue(Observable.empty());
-        instance.handover.and.returnValue(Observable.empty());
-        instance.stopHandover.and.returnValue(Observable.empty());
-        instance.showSettings.and.returnValue(Observable.empty());
-        instance.enabled.and.returnValue(Observable.empty());
+        instance.addNdefListener.and.returnValue(EmptyObservable.create());
+        instance.addTagDiscoveredListener.and.returnValue(EmptyObservable.create());
+        instance.addMimeTypeListener.and.returnValue(EmptyObservable.create());
+        instance.addNdefFormatableListener.and.returnValue(EmptyObservable.create());
+        instance.write.and.returnValue(EmptyObservable.create());
+        instance.makeReadyOnly.and.returnValue(EmptyObservable.create());
+        instance.share.and.returnValue(EmptyObservable.create());
+        instance.unshare.and.returnValue(EmptyObservable.create());
+        instance.erase.and.returnValue(EmptyObservable.create());
+        instance.handover.and.returnValue(EmptyObservable.create());
+        instance.stopHandover.and.returnValue(EmptyObservable.create());
+        instance.showSettings.and.returnValue(EmptyObservable.create());
+        instance.enabled.and.returnValue(EmptyObservable.create());
         instance.bytesToString.and.returnValue('');
         instance.stringToBytes.and.returnValue([]);
         instance.bytesToHexString.and.returnValue('');

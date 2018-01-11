@@ -1,4 +1,5 @@
-import { Observable } from 'rxjs/Observable';
+import { ArrayObservable } from 'rxjs/observable/ArrayObservable';
+import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
 
 export class ThreeDeeTouchMock{
     public static instance(): any {
@@ -11,8 +12,8 @@ export class ThreeDeeTouchMock{
             'disableLinkPreview'
         ]);
         instance.isAvailable.and.returnValue(Promise.resolve(true));
-        instance.watchForTouches.and.returnValue(Observable.of({}));
-        instance.onHomeIconPressed.and.returnValue(Observable.empty());
+        instance.watchForTouches.and.returnValue(ArrayObservable.of({}));
+        instance.onHomeIconPressed.and.returnValue(EmptyObservable.create());
 
         return instance;
     }
