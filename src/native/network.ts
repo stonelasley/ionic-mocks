@@ -5,7 +5,7 @@ export class NetworkMock {
         let instance = jasmine.createSpyObj('Network', [
             'type',
             'downlinkMax',
-            'onchange',
+            'onChange',
             'onDisconnect',
             'onConnect',
         ]);
