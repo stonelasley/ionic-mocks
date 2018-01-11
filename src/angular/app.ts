@@ -7,7 +7,11 @@ export class AppMock {
 
         let instance = jasmine.createSpyObj('App', [
             'getActiveNav',
+            'getActiveNavs',
+            'getNavByIdOrName',
             'getRootNav',
+            'getRootNavs',
+            'getRootNavById',
             'isScrolling',
             'setTitle',
             'viewDidEnter',
@@ -18,7 +22,12 @@ export class AppMock {
             'viewWillUnload'
         ]);
 
+        instance.getActiveNav.and.returnValue(navCtrl || NavControllerMock.instance());
+        instance.getActiveNavs.and.returnValue(navCtrl || [NavControllerMock.instance()]);
+        instance.getNavByIdOrName.and.returnValue(navCtrl || NavControllerMock.instance());
         instance.getRootNav.and.returnValue(navCtrl || NavControllerMock.instance());
+        instance.getRootNavs.and.returnValue(navCtrl || [NavControllerMock.instance()]);
+        instance.getRootNavById.and.returnValue(navCtrl || NavControllerMock.instance());
         instance.isScrolling.and.returnValue(false);
         instance.viewDidEnter.and.returnValue(viewObservable || ArrayObservable.of(undefined));
         instance.viewDidLoad.and.returnValue(viewObservable || ArrayObservable.of(undefined));
@@ -26,6 +35,7 @@ export class AppMock {
         instance.viewWillEnter.and.returnValue(viewObservable || ArrayObservable.of(undefined));
         instance.viewWillUnload.and.returnValue(viewObservable || ArrayObservable.of(undefined));
         instance.viewWillLeave.and.returnValue(viewObservable || ArrayObservable.of(undefined));
+        instance.viewWillUnload.and.returnValue(viewObservable || ArrayObservable.of(undefined));
 
         return instance;
     }

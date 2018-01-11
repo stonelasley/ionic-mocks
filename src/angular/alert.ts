@@ -1,16 +1,18 @@
 export class AlertMock {
     public static instance(): any {
-    	let _dismissCallback: Function;
+        let _dismissCallback: Function;
         let instance = jasmine.createSpyObj('Alert', ['present', 'dismiss', 'onDidDismiss']);
         instance.present.and.returnValue(Promise.resolve());
 
-        instance.dismiss.and.callFake(() => {
-            _dismissCallback();
+        instance.dismiss.and.callFake(x => {
+            _dismissCallback(x);
             return Promise.resolve();
         });
 
         instance.onDidDismiss.and.callFake((callback: Function) => {
-            _dismissCallback = callback;
+            if (callback) {
+                _dismissCallback = callback;
+            }
         });
 
         return instance;
