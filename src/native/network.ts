@@ -1,8 +1,9 @@
+import { createSpyObj } from '../utilities/create-spy';
 import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
 
 export class NetworkMock {
     public static instance(networkType: string): any {
-        let instance = jasmine.createSpyObj('Network', [
+        let instance = createSpyObj('Network', [
             'type',
             'downlinkMax',
             'onChange',

@@ -1,11 +1,12 @@
-import {Observable}           from 'rxjs/Observable';
-import {ArrayObservable}      from 'rxjs/observable/ArrayObservable';
-import {NavControllerMock}    from './nav-controller';
+import {createSpyObj}       from '../utilities/create-spy';
+import {Observable}         from 'rxjs/Observable';
+import {ArrayObservable}    from 'rxjs/observable/ArrayObservable';
+import {NavControllerMock}  from './nav-controller';
 
 export class AppMock {
     public static instance(navCtrl?: NavControllerMock, viewObservable?: Observable<any>): any {
 
-        let instance = jasmine.createSpyObj('App', [
+        let instance = createSpyObj('App', [
             'getActiveNav',
             'getRootNav',
             'isScrolling',

@@ -1,6 +1,8 @@
+import { createSpyObj } from '../utilities/create-spy';
+
 export class ContentMock {
     public static instance(): any {
-        let instance = jasmine.createSpyObj('Content', ['addImg', 'getContentDimensions', 'getFixedElement', 'resize', 'scrollTo', 'scrollToBottom', 'scrollToTop']);
+        let instance = createSpyObj('Content', ['addImg', 'getContentDimensions', 'getFixedElement', 'resize', 'scrollTo', 'scrollToBottom', 'scrollToTop']);
         instance['contentBottom'] = 10;
         instance['contentHeight'] = 10;
         instance['contentTop'] = 10;

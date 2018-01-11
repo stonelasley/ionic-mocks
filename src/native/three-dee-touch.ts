@@ -1,9 +1,10 @@
+import { createSpyObj } from '../utilities/create-spy';
 import { ArrayObservable } from 'rxjs/observable/ArrayObservable';
 import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
 
-export class ThreeDeeTouchMock{
+export class ThreeDeeTouchMock {
     public static instance(): any {
-        let instance = jasmine.createSpyObj('ThreeDeeTouch', [
+        let instance = createSpyObj('ThreeDeeTouch', [
             'isAvailable',
             'watchForTouches',
             'configureQuickActions',

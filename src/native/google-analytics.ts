@@ -1,7 +1,9 @@
+import { createSpyObj } from '../utilities/create-spy';
+
 export class GoogleAnalyticsMock {
 
     public static instance(): any {
-        let instance = jasmine.createSpyObj('GoogleAnalytics', [
+        let instance = createSpyObj('GoogleAnalytics', [
             'startTrackerWithId',
             'setAllowIDFACollection',
             'setUserId',

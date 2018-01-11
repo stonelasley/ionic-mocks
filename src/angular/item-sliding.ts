@@ -1,5 +1,7 @@
+import { createSpyObj } from '../utilities/create-spy';
+
 export class ItemSlidingMock {
     public static instance(): any {
-        return jasmine.createSpyObj('ItemSliding', ['close']);
+        return createSpyObj('ItemSliding', ['close']);
     }
 }

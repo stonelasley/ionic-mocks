@@ -1,8 +1,9 @@
+import { createSpyObj } from '../utilities/create-spy';
 import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
 
 export class NFCMock {
     public static instance(): any {
-        let instance = jasmine.createSpyObj('NFC', [
+        let instance = createSpyObj('NFC', [
             'addNdefListener',
             'addTagDiscoveredListener',
             'addMimeTypeListener',
