@@ -1,13 +1,14 @@
-import { Observable }           from 'rxjs';
-import { NavParamsMock }        from './nav-params';
-import { NavControllerMock }    from './nav-controller';
+import { Observable } from 'rxjs';
+import { NavParamsMock } from './nav-params';
+import { NavControllerMock } from './nav-controller';
+import { createSpyObj } from '../utilities/create-spy';
 
 export class ViewControllerMock {
 	private static staticInstance: any = null;
 
-	//HACK- https://github.com/stonelasley/ionic-mocks/issues/29
+	// HACK- https://github.com/stonelasley/ionic-mocks/issues/29
 	private static navController(): any {
-		let instance: any = jasmine.createSpyObj('NavController', [
+		let instance: any = createSpyObj('NavController', [
 			'goToRoot',
 			'initPane',
 			'paneChanged',
@@ -96,7 +97,7 @@ export class ViewControllerMock {
 
 	public static instance(): any {
 
-		let instance = jasmine.createSpyObj('ViewController', [
+		let instance = createSpyObj('ViewController', [
 			'willEnter',
 			'didEnter',
 			'willLeave',

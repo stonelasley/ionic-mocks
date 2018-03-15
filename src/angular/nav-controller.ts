@@ -1,11 +1,12 @@
-import {Observable} from 'rxjs/Observable';
+import { createSpyObj } from '../utilities/create-spy';
+import { Observable } from 'rxjs/Observable';
 import { ViewControllerMock } from './view-controller';
 
 export class NavControllerMock {
 
     public static instance(): any {
 
-        let instance: any = jasmine.createSpyObj('NavController', [
+        let instance: any = createSpyObj('NavController', [
             'goToRoot',
             'initPane',
             'paneChanged',

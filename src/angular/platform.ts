@@ -1,7 +1,9 @@
+import { createSpyObj } from '../utilities/create-spy';
+
 export class PlatformMock {
     public static instance(): any {
 
-        let instance = jasmine.createSpyObj('Platform', [
+        let instance = createSpyObj('Platform', [
             'dir',
             'getQueryParam',
             'height',

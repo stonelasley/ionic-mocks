@@ -1,6 +1,8 @@
+import { createSpyObj } from '../utilities/create-spy';
+
 export class ConfigMock {
     public static instance(): any {
-        let instance = jasmine.createSpyObj('Config', [
+        let instance = createSpyObj('Config', [
             'get',
             'getBoolean',
             'getNumber',

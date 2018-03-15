@@ -1,7 +1,9 @@
+import { createSpyObj } from '../utilities/create-spy';
+
 export class SlidesMock {
     public static instance(): any {
 
-        let instance = jasmine.createSpyObj('Slides', [
+        let instance = createSpyObj('Slides', [
             'controlBy',
             'controlInverse',
             'enableKeyboardControl',

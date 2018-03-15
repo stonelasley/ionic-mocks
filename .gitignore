@@ -44,6 +44,4 @@ src/**/*.d.ts
 src/**/*.js
 src/**/*.js.map
 
-dist
-
 .DS_Store
