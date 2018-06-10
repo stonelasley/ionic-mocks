@@ -1,5 +1,3 @@
-import { Observable } from 'rxjs/Observable';
-
 export class IonKeyboardMock {
     public static instance(): any {
         let instance = jasmine.createSpyObj('Keyboard', [

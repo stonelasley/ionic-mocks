@@ -1,4 +1,4 @@
-import { ArrayObservable }    from 'rxjs/observable/ArrayObservable';
+import { of }          from 'rxjs';
 import { ViewControllerMock } from './view-controller';
 
 export class NavControllerMock {
@@ -84,12 +84,12 @@ export class NavControllerMock {
         instance.length.and.returnValue(0);
         instance.getViews.and.returnValue([]);
         instance.isSwipeBackEnabled.and.returnValue(true);
-        instance.viewDidEnter = ArrayObservable.of();
-        instance.viewDidLeave = ArrayObservable.of();
-        instance.viewDidLoad = ArrayObservable.of();
-        instance.viewWillEnter = ArrayObservable.of();
-        instance.viewWillLeave = ArrayObservable.of();
-        instance.viewWillUnload = ArrayObservable.of();
+        instance.viewDidEnter = of();
+        instance.viewDidLeave = of();
+        instance.viewDidLoad = of();
+        instance.viewWillEnter = of();
+        instance.viewWillLeave = of();
+        instance.viewWillUnload = of();
 
         return instance;
     }
