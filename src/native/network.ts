@@ -1,4 +1,4 @@
-import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
+import { EMPTY } from 'rxjs';
 
 export class NetworkMock {
     public static instance(networkType: string): any {
@@ -11,9 +11,9 @@ export class NetworkMock {
         ]);
         instance.type.and.returnValue(networkType || 'wifi');
         instance.downlinkMax.and.returnValue('42');
-        instance.onChange.and.returnValue(EmptyObservable.create());
-        instance.onDisconnect.and.returnValue(EmptyObservable.create());
-        instance.onConnect.and.returnValue(EmptyObservable.create());
+        instance.onChange.and.returnValue(EMPTY);
+        instance.onDisconnect.and.returnValue(EMPTY);
+        instance.onConnect.and.returnValue(EMPTY);
         return instance;
     }
 }
