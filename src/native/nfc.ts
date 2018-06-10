@@ -1,4 +1,4 @@
-import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
+import { EMPTY } from 'rxjs';
 
 export class NFCMock {
     public static instance(): any {
@@ -20,19 +20,19 @@ export class NFCMock {
             'stringToBytes',
             'bytesToHexString'
         ]);
-        instance.addNdefListener.and.returnValue(EmptyObservable.create());
-        instance.addTagDiscoveredListener.and.returnValue(EmptyObservable.create());
-        instance.addMimeTypeListener.and.returnValue(EmptyObservable.create());
-        instance.addNdefFormatableListener.and.returnValue(EmptyObservable.create());
-        instance.write.and.returnValue(EmptyObservable.create());
-        instance.makeReadyOnly.and.returnValue(EmptyObservable.create());
-        instance.share.and.returnValue(EmptyObservable.create());
-        instance.unshare.and.returnValue(EmptyObservable.create());
-        instance.erase.and.returnValue(EmptyObservable.create());
-        instance.handover.and.returnValue(EmptyObservable.create());
-        instance.stopHandover.and.returnValue(EmptyObservable.create());
-        instance.showSettings.and.returnValue(EmptyObservable.create());
-        instance.enabled.and.returnValue(EmptyObservable.create());
+        instance.addNdefListener.and.returnValue(EMPTY);
+        instance.addTagDiscoveredListener.and.returnValue(EMPTY);
+        instance.addMimeTypeListener.and.returnValue(EMPTY);
+        instance.addNdefFormatableListener.and.returnValue(EMPTY);
+        instance.write.and.returnValue(EMPTY);
+        instance.makeReadyOnly.and.returnValue(EMPTY);
+        instance.share.and.returnValue(EMPTY);
+        instance.unshare.and.returnValue(EMPTY);
+        instance.erase.and.returnValue(EMPTY);
+        instance.handover.and.returnValue(EMPTY);
+        instance.stopHandover.and.returnValue(EMPTY);
+        instance.showSettings.and.returnValue(EMPTY);
+        instance.enabled.and.returnValue(EMPTY);
         instance.bytesToString.and.returnValue('');
         instance.stringToBytes.and.returnValue([]);
         instance.bytesToHexString.and.returnValue('');
