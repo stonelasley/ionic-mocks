@@ -1,96 +1,99 @@
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import { ViewControllerMock } from './view-controller';
+import { BaseMock } from '../base.mock';
+import deprecated from 'deprecated-decorator';
 
-export class NavControllerMock {
+const METHODS = [
+    'goToRoot',
+    'initPane',
+    'paneChanged',
+    'push',
+    'insert',
+    'insertPage',
+    'pop',
+    'popTo',
+    'popToRoot',
+    'popAll',
+    'remove',
+    'removeView',
+    'setRoot',
+    'setPages',
+    'hasChildren',
+    'getActiveChildNav',
+    'registerChildNav',
+    'unregisterChildNav',
+    'destroy',
+    'swipeBackStart',
+    'swipeBackProgress',
+    'swipeBackEnd',
+    'canSwipeBack',
+    'canGoBack',
+    'isTransitioning',
+    'setTransitioning',
+    'getActive',
+    'isActive',
+    'getByIndex',
+    'getPrevious',
+    'first',
+    'last',
+    'indexOf',
+    'length',
+    'getViews',
+    'isSwipeBackEnabled',
+    'dismissPageChangeViews',
+    'setViewPort',
+    'resize',
+    'viewDidEnter',
+    'viewDidLeave',
+    'viewDidLoad',
+    'viewWillEnter',
+    'viewWillLeave',
+    'viewWillUnload'
+];
 
+export class NavControllerMock extends BaseMock {
+    constructor() {
+        super('NavController', METHODS);
+
+        this.spyObj.goToRoot.and.returnValue(Promise.resolve());
+        this.spyObj.initPane.and.returnValue(1);
+        this.spyObj.push.and.returnValue(Promise.resolve());
+        this.spyObj.insert.and.returnValue(Promise.resolve());
+        this.spyObj.insertPage.and.returnValue(Promise.resolve());
+        this.spyObj.pop.and.returnValue(Promise.resolve());
+        this.spyObj.popTo.and.returnValue(Promise.resolve());
+        this.spyObj.popToRoot.and.returnValue(Promise.resolve());
+        this.spyObj.popAll.and.returnValue(Promise.resolve());
+        this.spyObj.remove.and.returnValue(Promise.resolve());
+        this.spyObj.removeView.and.returnValue(Promise.resolve());
+        this.spyObj.setRoot.and.returnValue(Promise.resolve());
+        this.spyObj.setPages.and.returnValue(Promise.resolve());
+        this.spyObj.hasChildren.and.returnValue(true);
+        this.spyObj.canSwipeBack.and.returnValue(true);
+        this.spyObj.canGoBack.and.returnValue(true);
+        this.spyObj.isTransitioning.and.returnValue(false);
+        this.spyObj.isActive.and.returnValue(true);
+        this.spyObj.getActive.and.returnValue(new ViewControllerMock());
+        this.spyObj.getByIndex.and.returnValue(new ViewControllerMock());
+        this.spyObj.getPrevious.and.returnValue(new ViewControllerMock());
+        this.spyObj.first.and.returnValue(new ViewControllerMock());
+        this.spyObj.last.and.returnValue(new ViewControllerMock());
+        this.spyObj.indexOf.and.returnValue(0);
+        this.spyObj.getViews.and.returnValue([]);
+        this.spyObj.isSwipeBackEnabled.and.returnValue(true);
+        this.spyObj.viewDidEnter = Observable.of();
+        this.spyObj.viewDidLeave = Observable.of();
+        this.spyObj.viewDidLoad = Observable.of();
+        this.spyObj.viewWillEnter = Observable.of();
+        this.spyObj.viewWillLeave = Observable.of();
+        this.spyObj.viewWillUnload = Observable.of();
+        this.spyObj['length'].and.returnValue(0);
+        this.spyObj['root'] = new ViewControllerMock();
+        this.spyObj['rootParams'] = {};
+    }
+
+    @deprecated('new NavControllerMock()')
     public static instance(): any {
-
-        let instance: any = jasmine.createSpyObj('NavController', [
-            'goToRoot',
-            'initPane',
-            'paneChanged',
-            'push',
-            'insert',
-            'insertPage',
-            'pop',
-            'popTo',
-            'popToRoot',
-            'popAll',
-            'remove',
-            'removeView',
-            'setRoot',
-            'setPages',
-            'hasChildren',
-            'getActiveChildNav',
-            'registerChildNav',
-            'unregisterChildNav',
-            'destroy',
-            'swipeBackStart',
-            'swipeBackProgress',
-            'swipeBackEnd',
-            'canSwipeBack',
-            'canGoBack',
-            'isTransitioning',
-            'setTransitioning',
-            'getActive',
-            'isActive',
-            'getByIndex',
-            'getPrevious',
-            'first',
-            'last',
-            'indexOf',
-            'length',
-            'getViews',
-            'isSwipeBackEnabled',
-            'dismissPageChangeViews',
-            'setViewPort',
-            'resize',
-            'viewDidEnter',
-            'viewDidLeave',
-            'viewDidLoad',
-            'viewWillEnter',
-            'viewWillLeave',
-            'viewWillUnload'
-        ]);
-
-        instance.goToRoot.and.returnValue(Promise.resolve());
-        instance.initPane.and.returnValue(1);
-
-        instance['root'] = ViewControllerMock.instance();
-        instance['rootParams'] = {};
-
-        instance.push.and.returnValue(Promise.resolve());
-        instance.insert.and.returnValue(Promise.resolve());
-        instance.insertPage.and.returnValue(Promise.resolve());
-        instance.pop.and.returnValue(Promise.resolve());
-        instance.popTo.and.returnValue(Promise.resolve());
-        instance.popToRoot.and.returnValue(Promise.resolve());
-        instance.popAll.and.returnValue(Promise.resolve());
-        instance.remove.and.returnValue(Promise.resolve());
-        instance.removeView.and.returnValue(Promise.resolve());
-        instance.setRoot.and.returnValue(Promise.resolve());
-        instance.setPages.and.returnValue(Promise.resolve());
-        instance.hasChildren.and.returnValue(true);
-        instance.canSwipeBack.and.returnValue(true);
-        instance.canGoBack.and.returnValue(true);
-        instance.isTransitioning.and.returnValue(false);
-        instance.getActive.and.returnValue(ViewControllerMock.instance());
-        instance.isActive.and.returnValue(true);
-        instance.getByIndex.and.returnValue(ViewControllerMock.instance());
-        instance.getPrevious.and.returnValue(ViewControllerMock.instance());
-        instance.first.and.returnValue(ViewControllerMock.instance());
-        instance.last.and.returnValue(ViewControllerMock.instance());
-        instance.indexOf.and.returnValue(0);
-        instance.length.and.returnValue(0);
-        instance.getViews.and.returnValue([]);
-        instance.isSwipeBackEnabled.and.returnValue(true);
-        instance.viewDidEnter = Observable.of();
-        instance.viewDidLeave = Observable.of();
-        instance.viewDidLoad = Observable.of();
-        instance.viewWillEnter = Observable.of();
-        instance.viewWillLeave = Observable.of();
-        instance.viewWillUnload = Observable.of();
-
-        return instance;
+        return new NavControllerMock();
     }
 }

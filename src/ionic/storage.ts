@@ -1,5 +1,5 @@
 export class StorageMock {
-    public static instance(key:any = 'key1', value: any = 'value1'): any {
+    public static instance(key: any = 'key1', value: any = 'value1'): any {
 
         let instance = jasmine.createSpyObj('Storage', [
             'driver',

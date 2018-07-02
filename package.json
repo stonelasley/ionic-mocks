@@ -21,7 +21,7 @@
   "scripts": {
     "test": "karma start",
     "build": "rimraf dist && tsc -d",
-    "lint": "tslint ./src/**/*.ts",
+    "lint": "tslint ./src/**/* -c tslint.json -p tsconfig.json",
     "version": "git add .",
     "prepublish": "npm run build",
     "postversion": "git push && git push --tags && npm publish",
@@ -71,5 +71,8 @@
       "@semantic-release/npm",
       "@semantic-release/github"
     ]
+  },
+  "dependencies": {
+    "deprecated-decorator": "^0.1.6"
   }
 }

@@ -1,9 +1,23 @@
-export class ActionSheetMock {
-    public static instance(): any {
-        let instance = jasmine.createSpyObj('ActionSheet', ['present', 'dismiss']);
-        instance.present.and.returnValue(Promise.resolve());
-        instance.dismiss.and.returnValue(Promise.resolve());
+import { BaseMock } from '../base.mock';
+import deprecated from 'deprecated-decorator';
 
-        return instance;
+
+const METHODS: string[] = [
+    'present',
+    'dismiss'
+];
+
+export class ActionSheetMock extends BaseMock {
+
+    constructor(actionSheet?: ActionSheetMock) {
+        super('ActionSheet', METHODS);
+
+        this.spyObj.present.and.returnValue(Promise.resolve());
+        this.spyObj.dismiss.and.returnValue(Promise.resolve());
     }
+
+        @deprecated('new ActionSheet()')
+        public static instance(): any {
+            return new ActionSheetMock();
+        }
 }

@@ -1,41 +1,77 @@
-import {Observable}           from 'rxjs/Observable';
-import {ArrayObservable}      from 'rxjs/observable/ArrayObservable';
-import {NavControllerMock}    from './nav-controller';
+import { Observable } from 'rxjs/Observable';
+import { ArrayObservable } from 'rxjs/observable/ArrayObservable';
+import { NavControllerMock } from './nav-controller';
+import { BaseMock } from '../base.mock';
+import deprecated from 'deprecated-decorator';
 
-export class AppMock {
-    public static instance(navCtrl?: NavControllerMock, viewObservable?: Observable<any>): any {
+const METHODS: string[] = [
+    'getActiveNav',
+    'getActiveNavs',
+    'getNavByIdOrName',
+    'getRootNav',
+    'getRootNavs',
+    'getRootNavById',
+    'isScrolling',
+    'setTitle',
+    'viewDidEnter',
+    'viewDidLeave',
+    'viewDidLoad',
+    'viewWillEnter',
+    'viewWillLeave',
+    'viewWillUnload'
+];
 
-        let instance = jasmine.createSpyObj('App', [
-            'getActiveNav',
-            'getActiveNavs',
-            'getNavByIdOrName',
-            'getRootNav',
-            'getRootNavs',
-            'getRootNavById',
-            'isScrolling',
-            'setTitle',
-            'viewDidEnter',
-            'viewDidLeave',
-            'viewDidLoad',
-            'viewWillEnter',
-            'viewWillLeave',
-            'viewWillUnload'
-        ]);
+export class AppMock extends BaseMock {
+    constructor(
+        private _navCtrl?: NavControllerMock,
+        private _viewObservable?: Observable<any>
+    ) {
+        super('App', METHODS);
 
-        instance.getActiveNav.and.returnValue(navCtrl || NavControllerMock.instance());
-        instance.getActiveNavs.and.returnValue(navCtrl || [NavControllerMock.instance()]);
-        instance.getNavByIdOrName.and.returnValue(navCtrl || NavControllerMock.instance());
-        instance.getRootNav.and.returnValue(navCtrl || NavControllerMock.instance());
-        instance.getRootNavs.and.returnValue(navCtrl || [NavControllerMock.instance()]);
-        instance.getRootNavById.and.returnValue(navCtrl || NavControllerMock.instance());
-        instance.isScrolling.and.returnValue(false);
-        instance.viewDidEnter.and.returnValue(viewObservable || ArrayObservable.of(undefined));
-        instance.viewDidLoad.and.returnValue(viewObservable || ArrayObservable.of(undefined));
-        instance.viewDidLeave.and.returnValue(viewObservable || ArrayObservable.of(undefined));
-        instance.viewWillEnter.and.returnValue(viewObservable || ArrayObservable.of(undefined));
-        instance.viewWillLeave.and.returnValue(viewObservable || ArrayObservable.of(undefined));
-        instance.viewWillUnload.and.returnValue(viewObservable || ArrayObservable.of(undefined));
+        this.spyObj.getActiveNav.and.returnValue(
+            _navCtrl || new NavControllerMock()
+        );
+        this.spyObj.getActiveNavs.and.returnValue(
+            _navCtrl || [new NavControllerMock()]
+        );
+        this.spyObj.getNavByIdOrName.and.returnValue(
+            _navCtrl || new NavControllerMock()
+        );
+        this.spyObj.getRootNav.and.returnValue(
+            _navCtrl || new NavControllerMock()
+        );
+        this.spyObj.getRootNavs.and.returnValue(
+            _navCtrl || [new NavControllerMock()]
+        );
+        this.spyObj.getRootNavById.and.returnValue(
+            _navCtrl || new NavControllerMock()
+        );
+        this.spyObj.isScrolling.and.returnValue(false);
+        this.spyObj.viewDidEnter.and.returnValue(
+            _viewObservable || ArrayObservable.of(undefined)
+        );
+        this.spyObj.viewDidLoad.and.returnValue(
+            _viewObservable || ArrayObservable.of(undefined)
+        );
+        this.spyObj.viewDidLeave.and.returnValue(
+            _viewObservable || ArrayObservable.of(undefined)
+        );
+        this.spyObj.viewWillEnter.and.returnValue(
+            _viewObservable || ArrayObservable.of(undefined)
+        );
+        this.spyObj.viewWillLeave.and.returnValue(
+            _viewObservable || ArrayObservable.of(undefined)
+        );
+        this.spyObj.viewWillUnload.and.returnValue(
+            _viewObservable || ArrayObservable.of(undefined)
+        );
+    }
 
-        return instance;
+    @deprecated('new AppMock()')
+    public static instance(
+        navCtrl?: NavControllerMock,
+        viewObservable?: Observable<any>
+    ): any {
+        return new AppMock(navCtrl, viewObservable);
     }
 }

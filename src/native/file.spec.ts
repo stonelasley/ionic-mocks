@@ -12,7 +12,7 @@ describe('FileMock', () => {
   });
 
   describe('getFreeDiskSpace', () => {
-    it("should should return 64", (done) => {
+    it('should should return 64', (done) => {
       file.getFreeDiskSpace().then(res => {
         expect(file.getFreeDiskSpace).toHaveBeenCalled();
         expect(res).toEqual(64);
@@ -22,7 +22,7 @@ describe('FileMock', () => {
   });
 
   describe('checkDir', () => {
-    it("should should return true", (done) => {
+    it('should should return true', (done) => {
       file.checkDir().then(res => {
         expect(file.checkDir).toHaveBeenCalled();
         expect(res).toEqual(true);
@@ -32,7 +32,7 @@ describe('FileMock', () => {
   });
 
   describe('createDir', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.createDir().then(res => {
         expect(file.createDir).toHaveBeenCalled();
         done();
@@ -41,7 +41,7 @@ describe('FileMock', () => {
   });
 
   describe('removeDir', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.removeDir().then(res => {
         expect(file.removeDir).toHaveBeenCalled();
         done();
@@ -50,7 +50,7 @@ describe('FileMock', () => {
   });
 
   describe('moveDir', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.moveDir().then(res => {
         expect(file.moveDir).toHaveBeenCalled();
         done();
@@ -59,7 +59,7 @@ describe('FileMock', () => {
   });
 
   describe('copyDir', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.copyDir().then(res => {
         expect(file.copyDir).toHaveBeenCalled();
         done();
@@ -68,7 +68,7 @@ describe('FileMock', () => {
   });
 
   describe('listDir', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.listDir().then(res => {
         expect(file.listDir).toHaveBeenCalled();
         done();
@@ -77,7 +77,7 @@ describe('FileMock', () => {
   });
 
   describe('removeRecursively', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.removeRecursively().then(res => {
         expect(file.removeRecursively).toHaveBeenCalled();
         done();
@@ -86,7 +86,7 @@ describe('FileMock', () => {
   });
 
   describe('checkFile', () => {
-    it("should should return true", (done) => {
+    it('should should return true', (done) => {
       file.checkFile().then(res => {
         expect(file.checkFile).toHaveBeenCalled();
         expect(res).toEqual(true);
@@ -96,7 +96,7 @@ describe('FileMock', () => {
   });
 
   describe('createFile', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.createFile().then(res => {
         expect(file.createFile).toHaveBeenCalled();
         done();
@@ -105,7 +105,7 @@ describe('FileMock', () => {
   });
 
   describe('removeFile', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.removeFile().then(res => {
         expect(file.removeFile).toHaveBeenCalled();
         done();
@@ -114,7 +114,7 @@ describe('FileMock', () => {
   });
 
   describe('writeFile', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.writeFile().then(res => {
         expect(file.writeFile).toHaveBeenCalled();
         done();
@@ -123,7 +123,7 @@ describe('FileMock', () => {
   });
 
   describe('writeExistingFile', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.writeExistingFile().then(res => {
         expect(file.writeExistingFile).toHaveBeenCalled();
         done();
@@ -132,37 +132,37 @@ describe('FileMock', () => {
   });
 
   describe('readAsText', () => {
-    it("should should return 'a string'", (done) => {
+    it('should should return \'a string\'', (done) => {
       file.readAsText().then(res => {
         expect(file.readAsText).toHaveBeenCalled();
-        expect(res).toEqual("a string");
+        expect(res).toEqual('a string');
         done();
       });
     });
   });
 
   describe('readAsDataURL', () => {
-    it("should should return 'data:,some%20data'", (done) => {
+    it('should should return \'data: , some % 20data\'', (done) => {
       file.readAsDataURL().then(res => {
         expect(file.readAsDataURL).toHaveBeenCalled();
-        expect(res).toEqual("data:,some%20data");
+        expect(res).toEqual('data:,some%20data');
         done();
       });
     });
   });
 
   describe('readAsBinaryString', () => {
-    it("should should return '101010'", (done) => {
+    it('should should return \'101010\'', (done) => {
       file.readAsBinaryString().then(res => {
         expect(file.readAsBinaryString).toHaveBeenCalled();
-        expect(res).toEqual("101010");
+        expect(res).toEqual('101010');
         done();
       });
     });
   });
 
   describe('readAsArrayBuffer', () => {
-    it("should should return an ArrayBuffer one byte long", (done) => {
+    it('should should return an ArrayBuffer one byte long', (done) => {
       file.readAsArrayBuffer().then(res => {
         expect(file.readAsArrayBuffer).toHaveBeenCalled();
         expect(res.byteLength).toEqual(1);
@@ -172,7 +172,7 @@ describe('FileMock', () => {
   });
 
   describe('moveFile', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.moveFile().then(res => {
         expect(file.moveFile).toHaveBeenCalled();
         done();
@@ -181,7 +181,7 @@ describe('FileMock', () => {
   });
 
   describe('copyFile', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.copyFile().then(res => {
         expect(file.copyFile).toHaveBeenCalled();
         done();
@@ -190,7 +190,7 @@ describe('FileMock', () => {
   });
 
   describe('resolveLocalFilesystemUrl', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.resolveLocalFilesystemUrl().then(res => {
         expect(file.resolveLocalFilesystemUrl).toHaveBeenCalled();
         done();
@@ -199,7 +199,7 @@ describe('FileMock', () => {
   });
 
   describe('resolveDirectoryUrl', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.resolveDirectoryUrl().then(res => {
         expect(file.resolveDirectoryUrl).toHaveBeenCalled();
         done();
@@ -208,7 +208,7 @@ describe('FileMock', () => {
   });
 
   describe('getDirectory', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.getDirectory().then(res => {
         expect(file.getDirectory).toHaveBeenCalled();
         done();
@@ -217,7 +217,7 @@ describe('FileMock', () => {
   });
 
   describe('getFile', () => {
-    it("should should have been called", (done) => {
+    it('should should have been called', (done) => {
       file.getFile().then(res => {
         expect(file.getFile).toHaveBeenCalled();
         done();

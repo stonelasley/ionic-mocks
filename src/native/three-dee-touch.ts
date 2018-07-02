@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 
-export class ThreeDeeTouchMock{
+export class ThreeDeeTouchMock {
     public static instance(): any {
         let instance = jasmine.createSpyObj('ThreeDeeTouch', [
             'isAvailable',
