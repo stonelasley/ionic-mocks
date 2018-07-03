@@ -4,7 +4,7 @@ module.exports = function(config) {
 	var cfg ={
 		basePath: '',
 		frameworks: ['jasmine', 'karma-typescript'],
-		reporters: ['progress', 'karma-typescript'],
+		reporters: ['progress', 'karma-typescript', 'coverage', 'coveralls'],
 		files: ['src/**/*.ts'],
 		browsers: ['Chrome'],
 		singleRun: true,
@@ -23,15 +23,8 @@ module.exports = function(config) {
 			}
 		},
 		coverageReporter: {
-			dir: '../coverage/',
-			reporters: [{
-				type: 'text'
-			}, {
-				type: 'json',
-				dir: '../coverage',
-				subdir: 'json',
-				file: 'coverage-final.json'
-			}]
+			type: 'lcov',
+			dir: 'coverage'
 		}
 	};
 	if (process.env.TRAVIS) {
