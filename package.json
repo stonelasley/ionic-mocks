@@ -21,7 +21,7 @@
   "scripts": {
     "test": "karma start",
     "build": "rimraf dist && tsc -d",
-    "lint": "tslint ./src/**/* -c tslint.json -p tsconfig.json",
+    "lint": "tslint -c tslint.json -p ./tsconfig.json 'src/**/*.ts'",
     "version": "git add .",
     "prepublish": "npm run build",
     "postversion": "git push && git push --tags && npm publish",
