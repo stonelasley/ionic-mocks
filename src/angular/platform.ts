@@ -1,63 +1,72 @@
-export class PlatformMock {
-    public static instance(): any {
+import { BaseMock } from './../base.mock';
+import { deprecated } from 'deprecated-decorator';
 
-        let instance = jasmine.createSpyObj('Platform', [
-            'dir',
-            'getQueryParam',
-            'height',
-            'is',
-            'isLandscape',
-            'isPortrait',
-            'isRTL',
-            'lang',
-            'pause',
-            'platforms',
-            'ready',
-            'registerBackButtonAction',
-            'resize',
-            'resume',
-            'setDir',
-            'setLang',
-            'testUserAgent',
-            'url',
-            'version',
-            'width',
-            'doc',
-            'registerListener',
-            'win',
-            'getActiveElement',
-            'raf',
-            'hasFocus',
-            'getElementComputedStyle',
-            'timeout'
-        ]);
+const METHODS = [
+    'dir',
+    'getQueryParam',
+    'height',
+    'is',
+    'isLandscape',
+    'isPortrait',
+    'isRTL',
+    'lang',
+    'pause',
+    'platforms',
+    'ready',
+    'registerBackButtonAction',
+    'resize',
+    'resume',
+    'setDir',
+    'setLang',
+    'testUserAgent',
+    'url',
+    'versions',
+    'width',
+    'doc',
+    'registerListener',
+    'win',
+    'getActiveElement',
+    'raf',
+    'hasFocus',
+    'getElementComputedStyle',
+    'timeout'
+];
 
-        instance.dir.and.returnValue('');
-        instance.getQueryParam.and.returnValue('');
-        instance.height.and.returnValue(0);
-        instance.is.and.returnValue(true);
-        instance.isLandscape.and.returnValue(false);
-        instance.isRTL.and.returnValue(true);
-        instance.lang.and.returnValue('en');
-        instance.platforms.and.returnValue([]);
-        instance.ready.and.returnValue(Promise.resolve());
-        instance.registerBackButtonAction.and.returnValue(() => {});
-        instance.registerListener.and.returnValue(() => {});
-        instance.url.and.returnValue('');
-        instance.version.and.returnValue([]);
-        instance.width.and.returnValue(0);
-        instance.doc.and.returnValue(document);
-        instance.win.and.returnValue(window);
-        instance.getActiveElement.and.returnValue(document['activeElement']);
-        instance.raf.and.returnValue(1);
-        instance.hasFocus.and.returnValue(true);
-        instance.getElementComputedStyle.and.returnValue({
+export class PlatformMock extends BaseMock {
+    constructor() {
+        super('Platform', METHODS);
+
+        this.spyObj.dir.and.returnValue('');
+        this.spyObj.getQueryParam.and.returnValue('');
+        this.spyObj.height.and.returnValue(0);
+        this.spyObj.is.and.returnValue(true);
+        this.spyObj.isLandscape.and.returnValue(false);
+        this.spyObj.isPortrait.and.returnValue(true);
+        this.spyObj.isRTL.and.returnValue(false);
+        this.spyObj.lang.and.returnValue('en');
+        this.spyObj.platforms.and.returnValue([]);
+        this.spyObj.ready.and.returnValue(Promise.resolve());
+        this.spyObj.registerBackButtonAction.and.returnValue(() => {});
+        this.spyObj.registerListener.and.returnValue(() => {});
+        this.spyObj.url.and.returnValue('');
+        this.spyObj.versions.and.returnValue({});
+        this.spyObj.width.and.returnValue(0);
+        this.spyObj.doc.and.returnValue(document);
+        this.spyObj.win.and.returnValue(window);
+        this.spyObj.getActiveElement.and.returnValue(document['activeElement']);
+        this.spyObj.raf.and.returnValue(1);
+        this.spyObj.hasFocus.and.returnValue(true);
+        this.spyObj.getElementComputedStyle.and.returnValue({
             paddingLeft: '10',
             paddingTop: '10',
             paddingRight: '10',
             paddingBottom: '10'
         });
-        instance.timeout.and.returnValue((callback: any, timer: number) => setTimeout(callback, timer));
-        return instance;
+        this.spyObj.timeout.and.returnValue((callback: any, timer: number) => setTimeout(callback, timer));
+    }
+
+    @deprecated('new PlatformMock()')
+    public static instance(): any {
+        return new PlatformMock();
     }
 }
