@@ -1,24 +1,37 @@
-export class ContentMock {
+import deprecated from 'deprecated-decorator';
+import { BaseMock } from '../base.mock';
+
+const METHODS = [
+    'addImg',
+    'getContentDimensions',
+    'getFixedElement',
+    'resize',
+    'scrollTo',
+    'scrollToBottom',
+    'scrollToTop'
+];
+
+export class ContentMock extends BaseMock {
+    constructor() {
+        super('Content', METHODS);
+        this['contentBottom'] = 10;
+        this['contentHeight'] = 10;
+        this['contentTop'] = 10;
+        this['directionX'] = 'left';
+        this['directionY'] = 'up';
+        this['isScrolling'] = false;
+        this['scrollHeight'] = 10;
+        this['scrollLeft'] = 10;
+        this['scrollTop'] = 10;
+        this['scrollWidth'] = 10;
+        this.spyObj.getContentDimensions.and.returnValue({});
+        this.spyObj.scrollTo.and.returnValue(Promise.resolve());
+        this.spyObj.scrollToBottom.and.returnValue(Promise.resolve());
+        this.spyObj.scrollToTop.and.returnValue(Promise.resolve());
+    }
+
+    @deprecated('new ContentMock()')
     public static instance(): any {
-        let instance = jasmine.createSpyObj('Content', ['addImg', 'getContentDimensions', 'getFixedElement', 'resize', 'scrollTo', 'scrollToBottom', 'scrollToTop']);
-        instance['contentBottom'] = 10;
-        instance['contentHeight'] = 10;
-        instance['contentTop'] = 10;
-        instance['directionX'] = 'left';
-        instance['directionY'] = 'up';
-        instance['isScrolling'] = false;
-        instance['scrollHeight'] = 10;
-        instance['scrollLeft'] = 10;
-        instance['scrollTop'] = 10;
-        instance['scrollWidth'] = 10;
-
-        let dimensions = {};
-        instance.getContentDimensions.and.returnValue(dimensions);
-        instance.scrollTo.and.returnValue(Promise.resolve());
-        instance.scrollToBottom.and.returnValue(Promise.resolve());
-        instance.scrollToTop.and.returnValue(Promise.resolve());
-
-
-        return instance;
+        return new ContentMock();
     }
 }
