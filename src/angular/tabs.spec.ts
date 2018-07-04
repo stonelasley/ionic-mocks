@@ -22,7 +22,7 @@ describe('Tabs', () => {
         });
 
         it('should return provided Tab', () => {
-            const tab = TabMock.instance();
+            const tab = new TabMock();
             classUnderTest = new TabsMock(tab);
 
             const result = classUnderTest.select();
@@ -41,7 +41,7 @@ describe('Tabs', () => {
         });
 
         it('should return provided Tab', () => {
-            const tab = TabMock.instance();
+            const tab = new TabMock();
             classUnderTest = new TabsMock(null, tab);
 
             const result = classUnderTest.getSelected();
@@ -60,7 +60,7 @@ describe('Tabs', () => {
         });
 
         it('should return provided Tab', () => {
-            const tab = TabMock.instance();
+            const tab = new TabMock();
             classUnderTest = new TabsMock(null, null, tab);
 
             const result = classUnderTest.previousTab();

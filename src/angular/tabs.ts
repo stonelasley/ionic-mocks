@@ -8,9 +8,9 @@ export class TabsMock extends BaseMock {
 
     constructor(defaultTab?: TabMock, selectedTab?: TabMock, previousTab?: TabMock) {
         super('Tabs', METHODS);
-        this.spyObj.select.and.returnValue(defaultTab || TabMock.instance());
-        this.spyObj.getSelected.and.returnValue(selectedTab || TabMock.instance());
-        this.spyObj.previousTab.and.returnValue(previousTab || TabMock.instance());
+        this.spyObj.select.and.returnValue(defaultTab || new TabMock());
+        this.spyObj.getSelected.and.returnValue(selectedTab || new TabMock());
+        this.spyObj.previousTab.and.returnValue(previousTab || new TabMock());
     }
 
     @deprecated('new TabsMock()')
