@@ -1,11 +1,17 @@
-import {PopoverMock}                  from './popover';
+import deprecated from 'deprecated-decorator';
+import { PopoverMock }                  from './popover';
+import { BaseMock } from '../base.mock';
 
-export class PopoverControllerMock {
+const METHODS = ['create'];
+
+export class PopoverControllerMock extends BaseMock {
+    constructor(popOver?: PopoverMock) {
+        super('PopoverController', METHODS);
+        this.spyObj.create.and.returnValue(popOver || new PopoverMock());
+    }
+
+    @deprecated('new PopoverControllerMock()')
     public static instance(popOver?: PopoverMock): any {
-
-        let instance = jasmine.createSpyObj('PopoverController', ['create']);
-        instance.create.and.returnValue(popOver || PopoverMock.instance());
-
-        return instance;
+        return new PopoverControllerMock(popOver);
     }
 }
