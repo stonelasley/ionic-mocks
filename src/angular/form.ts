@@ -1,16 +1,24 @@
-export class FormMock {
-    public static instance(): any {
-        let instance = jasmine.createSpyObj('Form', [
+import deprecated from 'deprecated-decorator';
+import { BaseMock } from '../base.mock';
+
+const METHODS = [
             'register',
             'nextId',
             'deregister',
             'setAsFocused',
             'unsetAsFocused',
             'tabFocus'
-        ]);
+        ];
 
-        instance.nextId.and.returnValue(0);
+export class FormMock extends BaseMock​​ {
 
-        return instance;
+    constructor() {
+        super('Form', METHODS);
+        this.spyObj.nextId.and.returnValue(0);
+    }
+
+    @deprecated('new FormMock()')
+    public static instance(): any {
+        return new FormMock();
     }
 }
