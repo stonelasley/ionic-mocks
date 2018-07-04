@@ -80,4 +80,4 @@ describe('Tabs', () => {
             expect(classUnderTest.ngOnDestroy).toBeDefined();
         });
     });
-}); 
+});
