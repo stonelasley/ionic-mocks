@@ -1,8 +1,17 @@
-export class PopoverMock {
-    public static instance(): any {
-        let instance = jasmine.createSpyObj('Popover', ['present', 'dismissAll', 'setContent', 'setSpinner']);
-        instance.present.and.returnValue(Promise.resolve());
+import { BaseMock } from '../base.mock';
+import { deprecated } from 'deprecated-decorator';
 
-        return instance;
+const METHODS = ['present', 'dismissAll', 'setContent', 'setSpinner'];
+
+export class PopoverMock extends BaseMock {
+
+    constructor() {
+        super('Popover', METHODS);
+        this.spyObj.present.and.returnValue(Promise.resolve());
+    }
+
+    @deprecated('new PopoverMock()')
+    public static instance(): any {
+        return new PopoverMock();
     }
 }
