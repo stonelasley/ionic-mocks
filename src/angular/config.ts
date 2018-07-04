@@ -1,6 +1,7 @@
-export class ConfigMock {
-    public static instance(): any {
-        let instance = jasmine.createSpyObj('Config', [
+import deprecated from 'deprecated-decorator';
+import { BaseMock } from '../base.mock';
+
+const METHODS = [
             'get',
             'getBoolean',
             'getNumber',
@@ -10,12 +11,19 @@ export class ConfigMock {
             'getModeConfig',
             'setTransition',
             'getTransition'
-        ]);
+];
+export class ConfigMock extends BaseMock​​ {
 
-        instance.get.and.returnValue('');
-        instance.getBoolean.and.returnValue(true);
-        instance.getNumber.and.returnValue(0);
+    constructor() {
+        super('Config', METHODS);
+        this.spyObj.get.and.returnValue('');
+        this.spyObj.getBoolean.and.returnValue(true);
+        this.spyObj.getNumber.and.returnValue(0);
 
-        return instance;
+    }
+
+    @deprecated('new ConfigMock()')
+    public static instance(): any {
+        return new ConfigMock();
     }
 }
