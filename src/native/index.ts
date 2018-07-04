@@ -1,21 +1,9 @@
-import { SplashScreenMock }    from './splash-screen';
-import { KeyboardMock }        from './keyboard';
-import { StatusBarMock }       from './status-bar';
-import { ThreeDeeTouchMock }   from './three-dee-touch';
-import { NetworkMock }         from './network';
-import { GoogleAnalyticsMock } from './google-analytics';
-import { NFCMock }             from './nfc';
-import { VibrationMock }       from './vibration';
-import { FileMock }            from './file';
-
-export {
-    KeyboardMock,
-    SplashScreenMock,
-    StatusBarMock,
-    ThreeDeeTouchMock,
-    NetworkMock,
-    GoogleAnalyticsMock,
-    NFCMock,
-    VibrationMock,
-    FileMock
-};
+export * from './splash-screen';
+export * from './keyboard';
+export * from './status-bar';
+export * from './three-dee-touch';
+export * from './network';
+export * from './google-analytics';
+export * from './nfc';
+export * from './vibration';
+export * from './file';

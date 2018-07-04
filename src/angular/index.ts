@@ -1,61 +1,29 @@
-import {ActionSheetMock}              from './action-sheet';
-import {ActionSheetControllerMock}    from './action-sheet-controller';
-import {AlertMock}                    from './alert';
-import {AlertControllerMock}          from './alert-controller';
-import {AppMock}                      from './app';
-import {ConfigMock}                   from './config';
-import {ContentMock}                  from './content';
-import {EventsMock}                   from './events';
-import {FormMock}                     from './form';
-import {HapticMock}                   from './haptic';
-import {ItemSlidingMock}              from './item-sliding';
-import {LoadingMock}                  from './loading';
-import {LoadingControllerMock}        from './loading-controller';
-import {MenuMock}                     from './menu';
-import {MenuControllerMock}           from './menu-controller';
-import {ModalMock}                    from './modal';
-import {ModalControllerMock}          from './modal-controller';
-import {NavControllerMock}            from './nav-controller';
-import {NavParamsMock}                 from './nav-params';
-import {TabMock}                      from './tab';
-import {TabsMock}                     from './tabs';
-import {InfiniteScrollMock}           from './inifinite-scroll';
-import {PlatformMock}                 from './platform';
-import {PopoverMock}                  from './popover';
-import {PopoverControllerMock}        from './popover-controller';
-import {ToastMock}                    from './toast';
-import {ToastControllerMock}          from './toast-controller';
-import {SlidesMock}                   from './slides';
-import {ViewControllerMock}           from './view-controller';
-
-export {
-    ActionSheetMock,
-    ActionSheetControllerMock,
-    AlertMock,
-    AlertControllerMock,
-    AppMock,
-    ConfigMock,
-    ContentMock,
-    EventsMock,
-    FormMock,
-    HapticMock,
-    ItemSlidingMock,
-    LoadingMock,
-    LoadingControllerMock,
-    MenuMock,
-    MenuControllerMock,
-    ModalMock,
-    ModalControllerMock,
-    NavControllerMock,
-    NavParamsMock,
-    TabMock,
-    TabsMock,
-    InfiniteScrollMock,
-    PlatformMock,
-    PopoverMock,
-    PopoverControllerMock,
-    ToastMock,
-    ToastControllerMock,
-    SlidesMock,
-    ViewControllerMock
-};
+export * from './action-sheet';
+export * from './action-sheet-controller';
+export * from './alert';
+export * from './alert-controller';
+export * from './app';
+export * from './config';
+export * from './content';
+export * from './events';
+export * from './form';
+export * from './haptic';
+export * from './item-sliding';
+export * from './loading';
+export * from './loading-controller';
+export * from './menu';
+export * from './menu-controller';
+export * from './modal';
+export * from './modal-controller';
+export * from './nav-controller';
+export * from './nav-params';
+export * from './tab';
+export * from './tabs';
+export * from './inifinite-scroll';
+export * from './platform';
+export * from './popover';
+export * from './popover-controller';
+export * from './toast';
+export * from './toast-controller';
+export * from './slides';
+export * from './view-controller';
