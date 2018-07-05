@@ -4,7 +4,7 @@ describe('events', () => {
     let classUnderTest: any;
 
     beforeEach(() => {
-        classUnderTest = EventsMock.instance();
+        classUnderTest = new EventsMock();
     });
 
     describe('subscribe', () => {
