@@ -18,7 +18,7 @@ const METHODS = [
 export class MenuControllerMock extends BaseMock {
     constructor(menu?: MenuMock) {
         super('MenuController', METHODS);
-        let m = menu || MenuMock.instance();
+        let m = menu || new MenuMock();
         this.spyObj.close.and.returnValue(Promise.resolve());
         this.spyObj.enable.and.returnValue(m);
         this.spyObj.get.and.returnValue(m);

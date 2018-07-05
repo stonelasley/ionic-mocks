@@ -5,7 +5,7 @@ describe('LoadingController', () => {
     let classUnderTest: any;
 
     beforeEach(() => {
-        classUnderTest = LoadingControllerMock.instance();
+        classUnderTest = new LoadingControllerMock();
     });
 
     it('should be defined', () => {
@@ -28,7 +28,7 @@ describe('LoadingController', () => {
 
         it('should return provided Loading', () => {
             let loading = new LoadingMock();
-            classUnderTest = LoadingControllerMock.instance(loading);
+            classUnderTest = new LoadingControllerMock(loading);
 
             let result = classUnderTest.create();
 
