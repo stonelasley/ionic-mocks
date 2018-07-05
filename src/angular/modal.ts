@@ -1,18 +1,17 @@
-export class ModalMock {
+import { BaseMock } from '../base.mock';
+import deprecated from 'deprecated-decorator';
+
+const METHODS = ['present', 'dismiss', 'onDidDismiss'];
+
+export class ModalMock extends BaseMock {
+
+    constructor() {
+        super('Modal', METHODS);
+        this.spyObj.present.and.returnValue(Promise.resolve());
+    }
+
+    @deprecated('new ModalMock()')
     public static instance(): any {
-        let _dismissCallback: Function;
-        let instance = jasmine.createSpyObj('Modal', ['present', 'dismiss', 'onDidDismiss']);
-        instance.present.and.returnValue(Promise.resolve());
-
-        instance.dismiss.and.callFake(() => {
-            _dismissCallback();
-            return Promise.resolve();
-        });
-
-        instance.onDidDismiss.and.callFake((callback: Function) => {
-            _dismissCallback = callback;
-        });
-
-        return instance;
+        return new ModalMock();
     }
 }
