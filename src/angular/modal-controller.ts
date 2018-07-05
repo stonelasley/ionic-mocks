@@ -1,10 +1,18 @@
-import {ModalMock}  from './modal';
+import { BaseMock } from '../base.mock';
+import { ModalMock }  from './modal';
+import deprecated from 'deprecated-decorator';
 
-export class ModalControllerMock {
-    public static instance(modalMock?: ModalMock): any {
-        let instance = jasmine.createSpyObj('ModalController', ['create']);
-        instance.create.and.returnValue(modalMock || ModalMock.instance());
+const METHODS = ['create'];
 
-        return instance;
+export class ModalControllerMock extends BaseMock {
+
+    constructor(modal?: ModalMock) {
+        super('ModalController', METHODS);
+        this.spyObj.create.and.returnValue(modal || new ModalMock());
+    }
+
+    @deprecated('new ModalControllerMock()')
+    public static instance(modal?: ModalMock): any {
+        return new ModalControllerMock(modal);
     }
 }
