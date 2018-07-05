@@ -1,11 +1,17 @@
-import {ToastMock}  from './toast';
+import deprecated from 'deprecated-decorator';
+import { BaseMock } from '../base.mock';
+import { ToastMock } from './toast';
 
-export class ToastControllerMock {
+const METHODS = ['create'];
+
+export class ToastControllerMock extends BaseMock {
+    constructor(toast?: ToastMock) {
+        super('ToastController', METHODS);
+        this.spyObj.create.and.returnValue(toast || new ToastMock());
+    }
+
+    @deprecated('new ToastControllerMock()')
     public static instance(toast?: ToastMock): any {
-
-        let instance = jasmine.createSpyObj('ToastController', ['create']);
-        instance.create.and.returnValue(toast || ToastMock.instance());
-
-        return instance;
+        return new ToastControllerMock(toast);
     }
 }
