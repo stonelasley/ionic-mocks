@@ -75,7 +75,7 @@ export class ViewControllerMock extends BaseMock {
         };
 
         this.spyObj['component'] = {};
-        this.spyObj['data'] = NavParamsMock.instance();
+        this.spyObj['data'] = new NavParamsMock();
         this.spyObj['instance'] = {};
         this.spyObj['id'] = '';
     }

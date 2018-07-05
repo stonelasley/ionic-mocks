@@ -1,8 +1,17 @@
-export class NavParamsMock {
-    public static instance(getReturn?: any): any {
-        let instance = jasmine.createSpyObj('NavParams', ['get']);
-        instance.get.and.returnValue(getReturn);
+import { deprecated } from 'deprecated-decorator';
+import { BaseMock } from '../base.mock';
 
-        return instance;
+const METHODS = ['get'];
+
+export class NavParamsMock extends BaseMock {
+
+    constructor(getReturn?: any) {
+        super('NavParams', METHODS);
+        this.spyObj.get.and.returnValue(getReturn);
+    }
+
+    @deprecated('new NavParamsMock()')
+    public static instance(getReturn?: any): any {
+        return new NavParamsMock(getReturn);
     }
 }
