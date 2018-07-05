@@ -5,7 +5,7 @@ describe('ModalController', () => {
     let classUnderTest: any;
 
     beforeEach(() => {
-        classUnderTest = ModalControllerMock.instance();
+        classUnderTest = new ModalControllerMock();
     });
 
     it('should be defined', () => {
@@ -27,7 +27,7 @@ describe('ModalController', () => {
 
         it('should return provided Modal', () => {
             let modal = new ModalMock();
-            classUnderTest = ModalControllerMock.instance(modal);
+            classUnderTest = new ModalControllerMock(modal);
 
             let result = classUnderTest.create();
 
