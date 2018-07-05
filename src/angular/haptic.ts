@@ -1,15 +1,24 @@
-export class HapticMock {
-    public static instance(): any {
-        let instance = jasmine.createSpyObj('Haptic', ['available',
-            'gestureSelectionChanged',
-            'gestureSelectionEnd',
-            'gestureSelectionStart',
-            'impact',
-            'notification',
-            'selection'
-        ]);
-        instance.available.and.returnValue(true);
+import { BaseMock } from '../base.mock';
+import { deprecated } from 'deprecated-decorator';
 
-        return instance;
+const METHODS = [
+    'available',
+    'gestureSelectionChanged',
+    'gestureSelectionEnd',
+    'gestureSelectionStart',
+    'impact',
+    'notification',
+    'selection'
+];
+
+export class HapticMock extends BaseMock {
+    constructor() {
+        super('Haptic', METHODS);
+        this.spyObj.available.and.returnValue(true);
+    }
+
+    @deprecated('new HapticMock()')
+    public static instance(): any {
+        return new HapticMock();
     }
 }
