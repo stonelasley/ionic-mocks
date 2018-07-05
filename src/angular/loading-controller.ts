@@ -1,11 +1,17 @@
-import {LoadingMock} from './loading';
+import { deprecated } from 'deprecated-decorator';
+import { BaseMock } from '../base.mock';
+import { LoadingMock } from './loading';
 
-export class LoadingControllerMock {
+const METHODS = ['create'];
+
+export class LoadingControllerMock extends BaseMock {
+    constructor(loading?: LoadingMock) {
+        super('LoadingController', METHODS);
+        this.spyObj.create.and.returnValue(loading || new LoadingMock());
+    }
+
+    @deprecated('new LoadingControllerMock()')
     public static instance(loading?: LoadingMock): any {
-
-        let instance = jasmine.createSpyObj('LoadingController', ['create']);
-        instance.create.and.returnValue(loading || LoadingMock.instance());
-
-        return instance;
+        return new LoadingControllerMock(loading);
     }
 }
