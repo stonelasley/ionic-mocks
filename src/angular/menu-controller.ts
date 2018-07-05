@@ -1,20 +1,38 @@
-import {MenuMock} from './menu';
+import deprecated from 'deprecated-decorator';
+import { MenuMock } from './menu';
+import { BaseMock } from '../base.mock';
 
-export class MenuControllerMock {
-    public static instance(menu?: MenuMock): any {
+const METHODS = [
+    'close',
+    'enable',
+    'get',
+    'getMenus',
+    'getOpen',
+    'isEnabled',
+    'isOpen',
+    'open',
+    'swipeEnable',
+    'toggle'
+];
+
+export class MenuControllerMock extends BaseMock {
+    constructor(menu?: MenuMock) {
+        super('MenuController', METHODS);
         let m = menu || MenuMock.instance();
-        let instance = jasmine.createSpyObj('MenuController', ['close', 'enable', 'get', 'getMenus', 'getOpen', 'isEnabled', 'isOpen', 'open', 'swipeEnable', 'toggle']);
-        instance.close.and.returnValue(Promise.resolve());
-        instance.enable.and.returnValue(m);
-        instance.get.and.returnValue(m);
-        instance.getMenus.and.returnValue([m]);
-        instance.getOpen.and.returnValue(m);
-        instance.isEnabled.and.returnValue(true);
-        instance.isOpen.and.returnValue(false);
-        instance.open.and.returnValue(Promise.resolve());
-        instance.swipeEnable.and.returnValue(m);
-        instance.toggle.and.returnValue(Promise.resolve());
+        this.spyObj.close.and.returnValue(Promise.resolve());
+        this.spyObj.enable.and.returnValue(m);
+        this.spyObj.get.and.returnValue(m);
+        this.spyObj.getMenus.and.returnValue([m]);
+        this.spyObj.getOpen.and.returnValue(m);
+        this.spyObj.isEnabled.and.returnValue(true);
+        this.spyObj.isOpen.and.returnValue(false);
+        this.spyObj.open.and.returnValue(Promise.resolve());
+        this.spyObj.swipeEnable.and.returnValue(m);
+        this.spyObj.toggle.and.returnValue(Promise.resolve());
+    }
 
-        return instance;
+    @deprecated('new MenuControllerMock()')
+    public static instance(menu?: MenuMock): any {
+        return new MenuControllerMock(menu);
     }
 }
