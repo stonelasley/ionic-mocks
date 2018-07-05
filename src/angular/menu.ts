@@ -1,17 +1,22 @@
-export class MenuMock {
+import { BaseMock } from '../base.mock';
+
+const METHODS = ['blank', 'open', 'close'];
+
+export class MenuMock extends BaseMock {
+    constructor() {
+        super('Menu', METHODS);
+        this['content'] = 'menu content';
+        this['enabled'] = true;
+        this['id'] = 'menuId';
+        this['persistent'] = true;
+        this['side'] = 'left';
+        this['swipeEnabled'] = true;
+        this['type'] = 'reveal';
+        this.spyObj.open.and.returnValue(Promise.resolve(true));
+        this.spyObj.close.and.returnValue(Promise.resolve(true));
+    }
+
     public static instance(): any {
-        let instance = jasmine.createSpyObj('Menu', ['blank', 'open', 'close']);
-        instance['content'] = 'menu content';
-        instance['enabled'] = true;
-        instance['id'] = 'menuId';
-        instance['persistent'] = true;
-        instance['side'] = 'left';
-        instance['swipeEnabled'] = true;
-        instance['type'] = 'reveal';
-
-        instance.open.and.returnValue(Promise.resolve(true));
-        instance.close.and.returnValue(Promise.resolve(true));
-
-        return instance;
+        return new MenuMock();
     }
 }
