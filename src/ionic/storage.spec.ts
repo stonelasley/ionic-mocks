@@ -5,24 +5,26 @@ describe('StorageMock', () => {
     let classUnderTest;
 
     beforeEach(() => {
-       classUnderTest = StorageMock.instance();
+       classUnderTest = new StorageMock();
     });
 
     it('should initialize', () => {
-        expect(StorageMock.instance).toBeDefined();
+        expect(classUnderTest).toBeDefined();
     });
 
     describe('driver', () => {
 
-        it('should return string', () => {
+        it('should be defined', () => {
+            expect(classUnderTest.set).toBeDefined();
+        });
 
+        it('should return string', () => {
             expect(classUnderTest.driver).toEqual('');
         });
 
     });
 
     describe('ready', () => {
-
         it('should return spyable Promise', done => {
             classUnderTest.ready()
                 .then(res => {
@@ -35,6 +37,10 @@ describe('StorageMock', () => {
     });
 
     describe('set', () => {
+
+        it('should be defined', () => {
+            expect(classUnderTest.set).toBeDefined();
+        });
 
         it('should return spyable Promise', done => {
                 classUnderTest.set('foo')
@@ -51,7 +57,7 @@ describe('StorageMock', () => {
 
 
         it('should return spyable Promise with passed parameter', done => {
-            classUnderTest = StorageMock.instance('foo', 'bar');
+            classUnderTest = new StorageMock('foo', 'bar');
                 classUnderTest.get('foo')
                     .then(res => {
                         expect(classUnderTest.get).toHaveBeenCalledWith('foo');
