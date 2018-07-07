@@ -146,6 +146,13 @@ describe('PlatformMock', () => {
         it('should be defined', () => {
             expect(classUnderTest.resume).toBeDefined();
         });
+
+        it('should return empty Observable', done => {
+            classUnderTest.resume().subscribe(result => {
+                expect(result).toBeUndefined();
+                done();
+            });
+        });
     });
 
     describe('setDir', () => {
