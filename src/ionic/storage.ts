@@ -6,7 +6,7 @@ const METHODS = ['driver', 'ready', 'get', 'set', 'remove', 'clear', 'length', '
 export class StorageMock extends BaseMock {
     constructor(key: any = 'key1', value: any = 'value1') {
         super('Storage', METHODS);
-        this['driver'] = '';
+        this.setProperty('driver', '');
         this.setReturn('ready', Promise.resolve({}));
         this.setReturn('set', Promise.resolve());
         this.setReturn('get', Promise.resolve(value));

@@ -16,7 +16,7 @@ const METHODS = [
 export class StatusBarMock extends BaseMock {
     constructor() {
         super('StatusBar', METHODS);
-        this['isVisible'] = true;
+        this.setProperty('isVisible', true);
     }
 
     @deprecated()

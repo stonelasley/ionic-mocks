@@ -87,9 +87,9 @@ export class NavControllerMock extends BaseMock {
         this.setReturn('viewWillEnter', Observable.of());
         this.setReturn('viewWillLeave', Observable.of());
         this.setReturn('viewWillUnload', Observable.of());
-        this.spyObj['length'].and.returnValue(0);
-        this.spyObj['root'] = new ViewControllerMock();
-        this.spyObj['rootParams'] = {};
+        this.setReturn('length', 0);
+        this.setProperty('root', new ViewControllerMock());
+        this.setProperty('rootParams', {});
     }
 
     @deprecated('new NavControllerMock()')

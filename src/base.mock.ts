@@ -10,4 +10,8 @@ export abstract class BaseMock {
     setReturn(method: string, returnValue: any): void {
         this.spyObj[method].and.returnValue(returnValue);
     }
+
+    setProperty(property: string, returnValue: any): void {
+        this[property] = returnValue;
+    }
 }
