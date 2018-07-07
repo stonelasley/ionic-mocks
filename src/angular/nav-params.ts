@@ -4,10 +4,9 @@ import { BaseMock } from '../base.mock';
 const METHODS = ['get'];
 
 export class NavParamsMock extends BaseMock {
-
     constructor(getReturn?: any) {
         super('NavParams', METHODS);
-        this.spyObj.get.and.returnValue(getReturn);
+        this.setReturn('get', getReturn);
     }
 
     @deprecated('new NavParamsMock()')

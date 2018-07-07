@@ -7,8 +7,8 @@ const METHODS = ['hideKeyboardAccessoryBar', 'show', 'close', 'disableScroll', '
 export class KeyboardMock extends BaseMock {
     constructor(){
         super('Keyboard', METHODS);
-        this.spyObj.onKeyboardShow.and.returnValue(ArrayObservable.of(undefined));
-        this.spyObj.onKeyboardHide.and.returnValue(ArrayObservable.of(undefined));
+        this.setReturn('onKeyboardShow', ArrayObservable.of(undefined));
+        this.setReturn('onKeyboardHide', ArrayObservable.of(undefined));
     }
 
     @deprecated('new KeybaordMock()')

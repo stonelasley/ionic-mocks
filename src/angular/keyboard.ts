@@ -14,10 +14,9 @@ const METHODS = [
 ];
 
 export class KeyboardMock extends BaseMock {
-
     constructor() {
         super('Keyboard', METHODS);
-        this.spyObj.isOpen.and.returnValue(false);
+        this.setReturn('isOpen', false);
     }
 
     @deprecated('new Keyboard()')

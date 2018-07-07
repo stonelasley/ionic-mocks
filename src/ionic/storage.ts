@@ -7,14 +7,14 @@ export class StorageMock extends BaseMock {
     constructor(key: any = 'key1', value: any = 'value1') {
         super('Storage', METHODS);
         this['driver'] = '';
-        this.spyObj.ready.and.returnValue(Promise.resolve({}));
-        this.spyObj.set.and.returnValue(Promise.resolve());
-        this.spyObj.get.and.returnValue(Promise.resolve(value));
-        this.spyObj.remove.and.returnValue(Promise.resolve());
-        this.spyObj.clear.and.returnValue(Promise.resolve());
-        this.spyObj.length.and.returnValue(Promise.resolve(1));
-        this.spyObj.keys.and.returnValue(Promise.resolve([key]));
-        this.spyObj.forEach.and.returnValue(Promise.resolve());
+        this.setReturn('ready', Promise.resolve({}));
+        this.setReturn('set', Promise.resolve());
+        this.setReturn('get', Promise.resolve(value));
+        this.setReturn('remove', Promise.resolve());
+        this.setReturn('clear', Promise.resolve());
+        this.setReturn('length', Promise.resolve(1));
+        this.setReturn('keys', Promise.resolve([key]));
+        this.setReturn('forEach', Promise.resolve());
     }
 
     @deprecated('new StorageMock()')

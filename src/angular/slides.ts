@@ -25,11 +25,11 @@ const METHODS = [
 export class SlidesMock extends BaseMock {
     constructor() {
         super('Slides', METHODS);
-        this.spyObj.getActiveIndex.and.returnValue(0);
-        this.spyObj.getPreviousIndex.and.returnValue(0);
-        this.spyObj.isBeginning.and.returnValue(true);
-        this.spyObj.isEnd.and.returnValue(false);
-        this.spyObj.length.and.returnValue(1);
+        this.setReturn('getActiveIndex', 0);
+        this.setReturn('getPreviousIndex', 0);
+        this.setReturn('isBeginning', true);
+        this.setReturn('isEnd', false);
+        this.setReturn('length', 1);
     }
 
     @deprecated('new SlidesMock()')

@@ -1,5 +1,5 @@
 import deprecated from 'deprecated-decorator';
-import { PopoverMock }                  from './popover';
+import { PopoverMock } from './popover';
 import { BaseMock } from '../base.mock';
 
 const METHODS = ['create'];
@@ -7,7 +7,7 @@ const METHODS = ['create'];
 export class PopoverControllerMock extends BaseMock {
     constructor(popOver?: PopoverMock) {
         super('PopoverController', METHODS);
-        this.spyObj.create.and.returnValue(popOver || new PopoverMock());
+        this.setReturn('create', popOver || new PopoverMock());
     }
 
     @deprecated('new PopoverControllerMock()')

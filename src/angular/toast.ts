@@ -1,14 +1,11 @@
 import deprecated from 'deprecated-decorator';
 import { BaseMock } from '../base.mock';
 
-const METHODS = [
-'present', 'dismissAll', 'setContent', 'setSpinner'
-];
+const METHODS = ['present', 'dismissAll', 'setContent', 'setSpinner'];
 export class ToastMock extends BaseMock {
-
     constructor() {
         super('Toast', METHODS);
-        this.spyObj.present.and.returnValue(Promise.resolve());
+        this.setReturn('present', Promise.resolve());
     }
 
     @deprecated('new ToastMock()')

@@ -19,16 +19,16 @@ export class MenuControllerMock extends BaseMock {
     constructor(menu?: MenuMock) {
         super('MenuController', METHODS);
         let m = menu || new MenuMock();
-        this.spyObj.close.and.returnValue(Promise.resolve());
-        this.spyObj.enable.and.returnValue(m);
-        this.spyObj.get.and.returnValue(m);
-        this.spyObj.getMenus.and.returnValue([m]);
-        this.spyObj.getOpen.and.returnValue(m);
-        this.spyObj.isEnabled.and.returnValue(true);
-        this.spyObj.isOpen.and.returnValue(false);
-        this.spyObj.open.and.returnValue(Promise.resolve());
-        this.spyObj.swipeEnable.and.returnValue(m);
-        this.spyObj.toggle.and.returnValue(Promise.resolve());
+        this.setReturn('close', Promise.resolve());
+        this.setReturn('enable', m);
+        this.setReturn('get', m);
+        this.setReturn('getMenus', [m]);
+        this.setReturn('getOpen', m);
+        this.setReturn('isEnabled', true);
+        this.setReturn('isOpen', false);
+        this.setReturn('open', Promise.resolve());
+        this.setReturn('swipeEnable', m);
+        this.setReturn('toggle', Promise.resolve());
     }
 
     @deprecated('new MenuControllerMock()')

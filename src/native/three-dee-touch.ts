@@ -17,9 +17,9 @@ export class ThreeDeeTouchMock extends BaseMock {
     constructor() {
         super('ThreeDeeTouch', METHODS);
 
-        this.spyObj.isAvailable.and.returnValue(Promise.resolve(true));
-        this.spyObj.watchForTouches.and.returnValue(Observable.of<Object>({}));
-        this.spyObj.onHomeIconPressed.and.returnValue(ArrayObservable.of(undefined));
+        this.setReturn('isAvailable', Promise.resolve(true));
+        this.setReturn('watchForTouches', Observable.of<Object>({}));
+        this.setReturn('onHomeIconPressed', ArrayObservable.of(undefined));
     }
 
     @deprecated('new ThreeDeeTouchMock()')

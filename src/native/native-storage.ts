@@ -5,10 +5,10 @@ const METHODS = ['setItem', 'getItem', 'keys', 'remove', 'clear'];
 export class NativeStorage extends BaseMock {
     constructor(item?: any, keys?: any) {
         super('NativeStorage', METHODS);
-        this.spyObj.setItem.and.returnValue(Promise.resolve(item));
-        this.spyObj.getItem.and.returnValue(Promise.resolve(item));
-        this.spyObj.keys.and.returnValue(Promise.resolve(keys));
-        this.spyObj.remove.and.returnValue(Promise.resolve());
-        this.spyObj.clear.and.returnValue(Promise.resolve());
+        this.setReturn('setItem', Promise.resolve(item));
+        this.setReturn('getItem', Promise.resolve(item));
+        this.setReturn('keys', Promise.resolve(keys));
+        this.setReturn('remove', Promise.resolve());
+        this.setReturn('clear', Promise.resolve());
     }
 }

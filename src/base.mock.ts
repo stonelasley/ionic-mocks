@@ -4,9 +4,10 @@ export abstract class BaseMock {
 
     constructor(baseName: string, methodNames: any[]) {
         this.spyObj = jasmine.createSpyObj(baseName, methodNames);
+        Object.assign(this, this.spyObj);
+    }
 
-        methodNames.forEach(methodName => {
-            this[methodName] = this.spyObj[methodName];
-        });
+    setReturn(method: string, returnValue: any): void {
+        this.spyObj[method].and.returnValue(returnValue);
     }
 }

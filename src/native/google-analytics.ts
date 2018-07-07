@@ -23,22 +23,22 @@ const METHODS = [
 export class GoogleAnalyticsMock extends BaseMock {
     constructor() {
         super('GoogleAnalytics', METHODS);
-        this.spyObj.startTrackerWithId.and.returnValue(Promise.resolve());
-        this.spyObj.setAllowIDFACollection.and.returnValue(Promise.resolve());
-        this.spyObj.setUserId.and.returnValue(Promise.resolve());
-        this.spyObj.setAnonymizeIp.and.returnValue(Promise.resolve());
-        this.spyObj.setAppVersion.and.returnValue(Promise.resolve());
-        this.spyObj.setOptOut.and.returnValue(Promise.resolve());
-        this.spyObj.debugMode.and.returnValue(Promise.resolve());
-        this.spyObj.trackMetric.and.returnValue(Promise.resolve());
-        this.spyObj.trackView.and.returnValue(Promise.resolve());
-        this.spyObj.addCustomDimension.and.returnValue(Promise.resolve());
-        this.spyObj.trackEvent.and.returnValue(Promise.resolve());
-        this.spyObj.trackException.and.returnValue(Promise.resolve());
-        this.spyObj.trackTiming.and.returnValue(Promise.resolve());
-        this.spyObj.addTransaction.and.returnValue(Promise.resolve());
-        this.spyObj.addTransactionItem.and.returnValue(Promise.resolve());
-        this.spyObj.enableUncaughtExceptionReporting.and.returnValue(Promise.resolve());
+        this.setReturn('startTrackerWithId', Promise.resolve());
+        this.setReturn('setAllowIDFACollection', Promise.resolve());
+        this.setReturn('setUserId', Promise.resolve());
+        this.setReturn('setAnonymizeIp', Promise.resolve());
+        this.setReturn('setAppVersion', Promise.resolve());
+        this.setReturn('setOptOut', Promise.resolve());
+        this.setReturn('debugMode', Promise.resolve());
+        this.setReturn('trackMetric', Promise.resolve());
+        this.setReturn('trackView', Promise.resolve());
+        this.setReturn('addCustomDimension', Promise.resolve());
+        this.setReturn('trackEvent', Promise.resolve());
+        this.setReturn('trackException', Promise.resolve());
+        this.setReturn('trackTiming', Promise.resolve());
+        this.setReturn('addTransaction', Promise.resolve());
+        this.setReturn('addTransactionItem', Promise.resolve());
+        this.setReturn('enableUncaughtExceptionReporting', Promise.resolve());
     }
 
     @deprecated('new GoogleAnalyticsMock()')

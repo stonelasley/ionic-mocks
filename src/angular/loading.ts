@@ -5,7 +5,7 @@ const METHODS = ['present', 'dismiss', 'setContent', 'setSpinner'];
 export class LoadingMock extends BaseMock {
     constructor() {
         super('Loading', METHODS);
-        this.spyObj.present.and.returnValue(Promise.resolve());
+        this.setReturn('present', Promise.resolve());
     }
 
     @deprecated('new LoadingMock()')

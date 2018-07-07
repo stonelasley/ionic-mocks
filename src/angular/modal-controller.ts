@@ -1,14 +1,13 @@
 import { BaseMock } from '../base.mock';
-import { ModalMock }  from './modal';
+import { ModalMock } from './modal';
 import deprecated from 'deprecated-decorator';
 
 const METHODS = ['create'];
 
 export class ModalControllerMock extends BaseMock {
-
     constructor(modal?: ModalMock) {
         super('ModalController', METHODS);
-        this.spyObj.create.and.returnValue(modal || new ModalMock());
+        this.setReturn('create', modal || new ModalMock());
     }
 
     @deprecated('new ModalControllerMock()')

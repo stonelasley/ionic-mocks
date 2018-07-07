@@ -7,7 +7,7 @@ const METHODS = ['create'];
 export class ToastControllerMock extends BaseMock {
     constructor(toast?: ToastMock) {
         super('ToastController', METHODS);
-        this.spyObj.create.and.returnValue(toast || new ToastMock());
+        this.setReturn('create', toast || new ToastMock());
     }
 
     @deprecated('new ToastControllerMock()')

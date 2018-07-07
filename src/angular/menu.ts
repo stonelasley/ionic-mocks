@@ -12,8 +12,8 @@ export class MenuMock extends BaseMock {
         this['side'] = 'left';
         this['swipeEnabled'] = true;
         this['type'] = 'reveal';
-        this.spyObj.open.and.returnValue(Promise.resolve(true));
-        this.spyObj.close.and.returnValue(Promise.resolve(true));
+        this.setReturn('open', Promise.resolve(true));
+        this.setReturn('close', Promise.resolve(true));
     }
 
     public static instance(): any {

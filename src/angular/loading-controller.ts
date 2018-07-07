@@ -7,7 +7,7 @@ const METHODS = ['create'];
 export class LoadingControllerMock extends BaseMock {
     constructor(loading?: LoadingMock) {
         super('LoadingController', METHODS);
-        this.spyObj.create.and.returnValue(loading || new LoadingMock());
+        this.setReturn('create', loading || new LoadingMock());
     }
 
     @deprecated('new LoadingControllerMock()')

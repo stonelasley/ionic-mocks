@@ -37,34 +37,34 @@ export class PlatformMock extends BaseMock {
     constructor() {
         super('Platform', METHODS);
 
-        this.spyObj.dir.and.returnValue('');
-        this.spyObj.getQueryParam.and.returnValue('');
-        this.spyObj.height.and.returnValue(0);
-        this.spyObj.is.and.returnValue(true);
-        this.spyObj.isLandscape.and.returnValue(false);
-        this.spyObj.isPortrait.and.returnValue(true);
-        this.spyObj.isRTL.and.returnValue(false);
-        this.spyObj.lang.and.returnValue('en');
-        this.spyObj.platforms.and.returnValue([]);
-        this.spyObj.ready.and.returnValue(Promise.resolve());
-        this.spyObj.registerBackButtonAction.and.returnValue(() => {});
-        this.spyObj.registerListener.and.returnValue(() => {});
-        this.spyObj.url.and.returnValue('');
-        this.spyObj.versions.and.returnValue({});
-        this.spyObj.width.and.returnValue(0);
-        this.spyObj.doc.and.returnValue(document);
-        this.spyObj.win.and.returnValue(window);
-        this.spyObj.getActiveElement.and.returnValue(document['activeElement']);
-        this.spyObj.raf.and.returnValue(1);
-        this.spyObj.hasFocus.and.returnValue(true);
-        this.spyObj.getElementComputedStyle.and.returnValue({
+        this.setReturn('dir', '');
+        this.setReturn('getQueryParam', '');
+        this.setReturn('height', 0);
+        this.setReturn('is', true);
+        this.setReturn('isLandscape', false);
+        this.setReturn('isPortrait', true);
+        this.setReturn('isRTL', false);
+        this.setReturn('lang', 'en');
+        this.setReturn('platforms', []);
+        this.setReturn('ready', Promise.resolve());
+        this.setReturn('registerBackButtonAction', () => {});
+        this.setReturn('registerListener', () => {});
+        this.setReturn('url', '');
+        this.setReturn('versions', {});
+        this.setReturn('width', 0);
+        this.setReturn('doc', document);
+        this.setReturn('win', window);
+        this.setReturn('getActiveElement', document['activeElement']);
+        this.setReturn('raf', 1);
+        this.setReturn('hasFocus', true);
+        this.setReturn('getElementComputedStyle', {
             paddingLeft: '10',
             paddingTop: '10',
             paddingRight: '10',
             paddingBottom: '10'
         });
-        this.spyObj.timeout.and.returnValue((callback: any, timer: number) => setTimeout(callback, timer));
-        this.spyObj.resume.and.returnValue(ArrayObservable.of(undefined));
+        this.setReturn('timeout', (callback: any, timer: number) => setTimeout(callback, timer));
+        this.setReturn('resume', ArrayObservable.of(undefined));
     }
 
     @deprecated('new PlatformMock()')

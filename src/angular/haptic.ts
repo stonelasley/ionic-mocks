@@ -14,7 +14,7 @@ const METHODS = [
 export class HapticMock extends BaseMock {
     constructor() {
         super('Haptic', METHODS);
-        this.spyObj.available.and.returnValue(true);
+        this.setReturn('available', true);
     }
 
     @deprecated('new HapticMock()')

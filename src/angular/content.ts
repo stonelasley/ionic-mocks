@@ -24,10 +24,10 @@ export class ContentMock extends BaseMock {
         this['scrollLeft'] = 10;
         this['scrollTop'] = 10;
         this['scrollWidth'] = 10;
-        this.spyObj.getContentDimensions.and.returnValue({});
-        this.spyObj.scrollTo.and.returnValue(Promise.resolve());
-        this.spyObj.scrollToBottom.and.returnValue(Promise.resolve());
-        this.spyObj.scrollToTop.and.returnValue(Promise.resolve());
+        this.setReturn('getContentDimensions', {});
+        this.setReturn('scrollTo', Promise.resolve());
+        this.setReturn('scrollToBottom', Promise.resolve());
+        this.setReturn('scrollToTop', Promise.resolve());
     }
 
     @deprecated('new ContentMock()')

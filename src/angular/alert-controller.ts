@@ -5,10 +5,9 @@ import { BaseMock } from '../base.mock';
 const METHODS = ['create'];
 
 export class AlertControllerMock extends BaseMock {
-
     constructor(alertMock?: AlertMock) {
         super('AlertController', METHODS);
-        this.spyObj.create.and.returnValue(alertMock || new AlertMock());
+        this.setReturn('create', alertMock || new AlertMock());
     }
 
     @deprecated('new AlertControllerMock()')

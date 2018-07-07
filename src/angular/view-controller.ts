@@ -43,26 +43,26 @@ export class ViewControllerMock extends BaseMock {
     constructor() {
         super('ViewController', METHODS);
 
-        this.spyObj.willEnter.and.returnValue(Observable.of({}));
-        this.spyObj.didEnter.and.returnValue(Observable.of({}));
-        this.spyObj.willLeave.and.returnValue(Observable.of({}));
-        this.spyObj.didLeave.and.returnValue(Observable.of({}));
-        this.spyObj.willUnload.and.returnValue(Observable.of({}));
-        this.spyObj.didUnload.and.returnValue(Observable.of({}));
-        this.spyObj.dismiss.and.returnValue(Promise.resolve());
-        this.spyObj.onDidDismiss.and.returnValue(Promise.resolve());
-        this.spyObj.onWillDismiss.and.returnValue(Promise.resolve());
-        this.spyObj.enableBack.and.returnValue(true);
-        this.spyObj.isFirst.and.returnValue(false);
-        this.spyObj.isLast.and.returnValue(false);
-        this.spyObj.pageRef.and.returnValue({});
-        this.spyObj.getContent.and.returnValue({});
-        this.spyObj.contentRef.and.returnValue(Promise.resolve());
-        this.spyObj.hasNavbar.and.returnValue(true);
-        this.spyObj.index.and.returnValue(true);
-        this.spyObj.subscribe.and.returnValue(Observable.of({}));
-        this.spyObj.getNav.and.returnValue({});
-        this.spyObj.getIONContent.and.returnValue({});
+        this.setReturn('willEnter', Observable.of({}));
+        this.setReturn('didEnter', Observable.of({}));
+        this.setReturn('willLeave', Observable.of({}));
+        this.setReturn('didLeave', Observable.of({}));
+        this.setReturn('willUnload', Observable.of({}));
+        this.setReturn('didUnload', Observable.of({}));
+        this.setReturn('dismiss', Promise.resolve());
+        this.setReturn('onDidDismiss', Promise.resolve());
+        this.setReturn('onWillDismiss', Promise.resolve());
+        this.setReturn('enableBack', true);
+        this.setReturn('isFirst', false);
+        this.setReturn('isLast', false);
+        this.setReturn('pageRef', {});
+        this.setReturn('getContent', {});
+        this.setReturn('contentRef', Promise.resolve());
+        this.setReturn('hasNavbar', true);
+        this.setReturn('index', true);
+        this.setReturn('subscribe', Observable.of({}));
+        this.setReturn('getNav', {});
+        this.setReturn('getIONContent', {});
 
         this.spyObj['writeReady'] = {
             emit(): void {},
