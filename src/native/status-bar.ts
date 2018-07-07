@@ -1,19 +1,26 @@
-export class StatusBarMock {
+import { BaseMock } from '../base.mock';
+import deprecated from 'deprecated-decorator';
+
+const METHODS = [
+    'overlaysWebView',
+    'styleDefault',
+    'styleLightContent',
+    'styleBlackTranslucent',
+    'styleBlackOpaque',
+    'backgroundColorByName',
+    'backgroundColorByHexString',
+    'hide',
+    'show'
+];
+
+export class StatusBarMock extends BaseMock {
+    constructor() {
+        super('StatusBar', METHODS);
+        this['isVisible'] = true;
+    }
+
+    @deprecated()
     public static instance(): any {
-        let instance: any = jasmine.createSpyObj('StatusBar', [
-            'overlaysWebView',
-            'styleDefault',
-            'styleLightContent',
-            'styleBlackTranslucent',
-            'styleBlackOpaque',
-            'backgroundColorByName',
-            'backgroundColorByHexString',
-            'hide',
-            'show',
-        ]);
-
-        instance['isVisible'] = true;
-
-        return instance;
+        return new StatusBarMock();
     }
 }

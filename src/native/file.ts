@@ -1,20 +1,7 @@
-export class FileMock {
-  public applicationDirectory: string = 'a-directory';
-  public applicationStorageDirectory: string = 'a-directory';
-  public dataDirectory: string = 'a-directory';
-  public cacheDirectory: string = 'a-directory';
-  public externalApplicationStorageDirectory: string = 'a-directory';
-  public externalDataDirectory: string = 'a-directory';
-  public externalCacheDirectory: string = 'a-directory';
-  public externalRootDirectory: string = 'a-directory';
-  public tempDirectory: string = 'a-directory';
-  public syncedDataDirectory: string = 'a-directory';
-  public documentsDirectory: string = 'a-directory';
-  public sharedDirectory: string = 'a-directory';
-  public cordovaFileError: any;
+import { BaseMock } from '../base.mock';
 
-  public static instance(): any {
-    let instance = jasmine.createSpyObj('File', [
+
+    const METHODS = [
       'getFreeDiskSpace',
       'checkDir',
       'createDir',
@@ -38,32 +25,54 @@ export class FileMock {
       'resolveDirectoryUrl',
       'getDirectory',
       'getFile'
-    ]);
+    ];
+export class FileMock extends BaseMock {
+  applicationDirectory = 'a-directory';
+  applicationStorageDirectory = 'a-directory';
+  dataDirectory = 'a-directory';
+  cacheDirectory = 'a-directory';
+  externalApplicationStorageDirectory = 'a-directory';
+  externalDataDirectory = 'a-directory';
+  externalCacheDirectory = 'a-directory';
+  externalRootDirectory = 'a-directory';
+  tempDirectory = 'a-directory';
+  syncedDataDirectory = 'a-directory';
+  documentsDirectory = 'a-directory';
+  sharedDirectory = 'a-directory';
+  cordovaFileError: any;
 
-    instance.getFreeDiskSpace.and.returnValue(Promise.resolve(64));
-    instance.checkDir.and.returnValue(Promise.resolve(true));
-    instance.createDir.and.returnValue(Promise.resolve());
-    instance.removeDir.and.returnValue(Promise.resolve());
-    instance.moveDir.and.returnValue(Promise.resolve());
-    instance.copyDir.and.returnValue(Promise.resolve());
-    instance.listDir.and.returnValue(Promise.resolve());
-    instance.removeRecursively.and.returnValue(Promise.resolve());
-    instance.checkFile.and.returnValue(Promise.resolve(true));
-    instance.createFile.and.returnValue(Promise.resolve());
-    instance.removeFile.and.returnValue(Promise.resolve());
-    instance.writeFile.and.returnValue(Promise.resolve());
-    instance.writeExistingFile.and.returnValue(Promise.resolve());
-    instance.readAsText.and.returnValue(Promise.resolve('a string'));
-    instance.readAsDataURL.and.returnValue(Promise.resolve('data:,some%20data'));
-    instance.readAsBinaryString.and.returnValue(Promise.resolve('101010'));
-    instance.readAsArrayBuffer.and.returnValue(Promise.resolve(new ArrayBuffer(1)));
-    instance.moveFile.and.returnValue(Promise.resolve());
-    instance.copyFile.and.returnValue(Promise.resolve());
-    instance.resolveLocalFilesystemUrl.and.returnValue(Promise.resolve());
-    instance.resolveDirectoryUrl.and.returnValue(Promise.resolve());
-    instance.getDirectory.and.returnValue(Promise.resolve());
-    instance.getFile.and.returnValue(Promise.resolve());
+  constructor() {
+    super('File', METHODS);
 
-    return instance;
+    this.spyObj.getFreeDiskSpace.and.returnValue(Promise.resolve(64));
+    this.spyObj.checkDir.and.returnValue(Promise.resolve(true));
+    this.spyObj.createDir.and.returnValue(Promise.resolve());
+    this.spyObj.removeDir.and.returnValue(Promise.resolve());
+    this.spyObj.moveDir.and.returnValue(Promise.resolve());
+    this.spyObj.copyDir.and.returnValue(Promise.resolve());
+    this.spyObj.listDir.and.returnValue(Promise.resolve());
+    this.spyObj.removeRecursively.and.returnValue(Promise.resolve());
+    this.spyObj.checkFile.and.returnValue(Promise.resolve(true));
+    this.spyObj.createFile.and.returnValue(Promise.resolve());
+    this.spyObj.removeFile.and.returnValue(Promise.resolve());
+    this.spyObj.writeFile.and.returnValue(Promise.resolve());
+    this.spyObj.writeExistingFile.and.returnValue(Promise.resolve());
+    this.spyObj.readAsText.and.returnValue(Promise.resolve('a string'));
+    this.spyObj.readAsDataURL.and.returnValue(Promise.resolve('data:,some%20data'));
+    this.spyObj.readAsBinaryString.and.returnValue(Promise.resolve('101010'));
+    this.spyObj.readAsArrayBuffer.and.returnValue(Promise.resolve(new ArrayBuffer(1)));
+    this.spyObj.moveFile.and.returnValue(Promise.resolve());
+    this.spyObj.copyFile.and.returnValue(Promise.resolve());
+    this.spyObj.resolveLocalFilesystemUrl.and.returnValue(Promise.resolve());
+    this.spyObj.resolveDirectoryUrl.and.returnValue(Promise.resolve());
+    this.spyObj.getDirectory.and.returnValue(Promise.resolve());
+    this.spyObj.getFile.and.returnValue(Promise.resolve());
+
+  }
+
+
+
+  public static instance(): any {
+    return new FileMock();
   }
 }

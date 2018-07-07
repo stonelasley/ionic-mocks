@@ -4,7 +4,7 @@ describe('FileMock', () => {
   let file;
 
   beforeEach(() => {
-    file = FileMock.instance();
+    file = new FileMock();
   });
 
   it('should initialise', () => {

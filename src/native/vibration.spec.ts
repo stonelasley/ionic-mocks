@@ -4,7 +4,7 @@ describe('VibrationMock', () => {
   let vibration;
 
   beforeEach(() => {
-    vibration = VibrationMock.instance();
+    vibration = new VibrationMock();
   });
 
   it('should initialise', () => {

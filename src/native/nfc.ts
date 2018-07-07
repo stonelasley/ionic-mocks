@@ -1,8 +1,8 @@
-import { Observable } from 'rxjs/Observable';
+import { ArrayObservable } from 'rxjs/observable/ArrayObservable';
+import deprecated from 'deprecated-decorator';
+import { BaseMock } from '../base.mock';
 
-export class NFCMock {
-    public static instance(): any {
-        let instance = jasmine.createSpyObj('NFC', [
+const METHODS = [
             'addNdefListener',
             'addTagDiscoveredListener',
             'addMimeTypeListener',
@@ -19,24 +19,30 @@ export class NFCMock {
             'bytesToString',
             'stringToBytes',
             'bytesToHexString'
-        ]);
-        instance.addNdefListener.and.returnValue(Observable.empty());
-        instance.addTagDiscoveredListener.and.returnValue(Observable.empty());
-        instance.addMimeTypeListener.and.returnValue(Observable.empty());
-        instance.addNdefFormatableListener.and.returnValue(Observable.empty());
-        instance.write.and.returnValue(Observable.empty());
-        instance.makeReadyOnly.and.returnValue(Observable.empty());
-        instance.share.and.returnValue(Observable.empty());
-        instance.unshare.and.returnValue(Observable.empty());
-        instance.erase.and.returnValue(Observable.empty());
-        instance.handover.and.returnValue(Observable.empty());
-        instance.stopHandover.and.returnValue(Observable.empty());
-        instance.showSettings.and.returnValue(Observable.empty());
-        instance.enabled.and.returnValue(Observable.empty());
-        instance.bytesToString.and.returnValue('');
-        instance.stringToBytes.and.returnValue([]);
-        instance.bytesToHexString.and.returnValue('');
+];
+export class NFCMock extends BaseMock {
+    constructor() {
+        super('NFC', METHODS);
+        this.spyObj.addNdefListener.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.addTagDiscoveredListener.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.addMimeTypeListener.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.addNdefFormatableListener.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.write.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.makeReadyOnly.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.share.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.unshare.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.erase.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.handover.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.stopHandover.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.showSettings.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.enabled.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.bytesToString.and.returnValue('');
+        this.spyObj.stringToBytes.and.returnValue([]);
+        this.spyObj.bytesToHexString.and.returnValue('');
+    }
 
-        return instance;
+    @deprecated('new NFCMock()')
+    public static instance(): any {
+        return new NFCMock();
     }
 }

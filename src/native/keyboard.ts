@@ -1,19 +1,18 @@
-import { Observable } from 'rxjs/Observable';
+import { ArrayObservable } from 'rxjs/observable/ArrayObservable';
+import { BaseMock } from '../base.mock';
+import deprecated from 'deprecated-decorator';
 
-export class KeyboardMock {
+const METHODS = ['hideKeyboardAccessoryBar', 'show', 'close', 'disableScroll', 'onKeyboardShow', 'onKeyboardHide'];
+
+export class KeyboardMock extends BaseMock {
+    constructor(){
+        super('Keyboard', METHODS);
+        this.spyObj.onKeyboardShow.and.returnValue(ArrayObservable.of(undefined));
+        this.spyObj.onKeyboardHide.and.returnValue(ArrayObservable.of(undefined));
+    }
+
+    @deprecated('new KeybaordMock()')
     public static instance(): any {
-        let instance = jasmine.createSpyObj('Keyboard', [
-            'hideKeyboardAccessoryBar',
-            'show',
-            'close',
-            'disableScroll',
-            'onKeyboardShow',
-            'onKeyboardHide'
-        ]);
-
-        instance.onKeyboardShow.and.returnValue(Observable.empty());
-        instance.onKeyboardHide.and.returnValue(Observable.empty());
-
-        return instance;
+        return new KeyboardMock();
     }
 }
