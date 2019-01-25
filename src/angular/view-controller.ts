@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { NavParamsMock } from './nav-params';
 import { BaseMock } from '../base.mock';
 import deprecated from 'deprecated-decorator';
@@ -43,12 +43,12 @@ export class ViewControllerMock extends BaseMock {
     constructor() {
         super('ViewController', METHODS);
 
-        this.spyObj.willEnter.and.returnValue(Observable.of({}));
-        this.spyObj.didEnter.and.returnValue(Observable.of({}));
-        this.spyObj.willLeave.and.returnValue(Observable.of({}));
-        this.spyObj.didLeave.and.returnValue(Observable.of({}));
-        this.spyObj.willUnload.and.returnValue(Observable.of({}));
-        this.spyObj.didUnload.and.returnValue(Observable.of({}));
+        this.spyObj.willEnter.and.returnValue(of({}));
+        this.spyObj.didEnter.and.returnValue(of({}));
+        this.spyObj.willLeave.and.returnValue(of({}));
+        this.spyObj.didLeave.and.returnValue(of({}));
+        this.spyObj.willUnload.and.returnValue(of({}));
+        this.spyObj.didUnload.and.returnValue(of({}));
         this.spyObj.dismiss.and.returnValue(Promise.resolve());
         this.spyObj.onDidDismiss.and.returnValue(Promise.resolve());
         this.spyObj.onWillDismiss.and.returnValue(Promise.resolve());
@@ -60,7 +60,7 @@ export class ViewControllerMock extends BaseMock {
         this.spyObj.contentRef.and.returnValue(Promise.resolve());
         this.spyObj.hasNavbar.and.returnValue(true);
         this.spyObj.index.and.returnValue(true);
-        this.spyObj.subscribe.and.returnValue(Observable.of({}));
+        this.spyObj.subscribe.and.returnValue(of({}));
         this.spyObj.getNav.and.returnValue({});
         this.spyObj.getIONContent.and.returnValue({});
 

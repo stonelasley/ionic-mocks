@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable, of } from 'rxjs';
 
 export class NFCMock {
     public static instance(): any {
@@ -20,19 +20,19 @@ export class NFCMock {
             'stringToBytes',
             'bytesToHexString'
         ]);
-        instance.addNdefListener.and.returnValue(Observable.empty());
-        instance.addTagDiscoveredListener.and.returnValue(Observable.empty());
-        instance.addMimeTypeListener.and.returnValue(Observable.empty());
-        instance.addNdefFormatableListener.and.returnValue(Observable.empty());
-        instance.write.and.returnValue(Observable.empty());
-        instance.makeReadyOnly.and.returnValue(Observable.empty());
-        instance.share.and.returnValue(Observable.empty());
-        instance.unshare.and.returnValue(Observable.empty());
-        instance.erase.and.returnValue(Observable.empty());
-        instance.handover.and.returnValue(Observable.empty());
-        instance.stopHandover.and.returnValue(Observable.empty());
-        instance.showSettings.and.returnValue(Observable.empty());
-        instance.enabled.and.returnValue(Observable.empty());
+        instance.addNdefListener.and.returnValue(of(null));
+        instance.addTagDiscoveredListener.and.returnValue(of(null));
+        instance.addMimeTypeListener.and.returnValue(of(null));
+        instance.addNdefFormatableListener.and.returnValue(of(null));
+        instance.write.and.returnValue(of(null));
+        instance.makeReadyOnly.and.returnValue(of(null));
+        instance.share.and.returnValue(of(null));
+        instance.unshare.and.returnValue(of(null));
+        instance.erase.and.returnValue(of(null));
+        instance.handover.and.returnValue(of(null));
+        instance.stopHandover.and.returnValue(of(null));
+        instance.showSettings.and.returnValue(of(null));
+        instance.enabled.and.returnValue(of(null));
         instance.bytesToString.and.returnValue('');
         instance.stringToBytes.and.returnValue([]);
         instance.bytesToHexString.and.returnValue('');

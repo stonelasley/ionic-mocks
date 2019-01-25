@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable, of } from 'rxjs';
 import { ViewControllerMock } from './view-controller';
 import { BaseMock } from '../base.mock';
 import deprecated from 'deprecated-decorator';
@@ -81,12 +81,12 @@ export class NavControllerMock extends BaseMock {
         this.spyObj.indexOf.and.returnValue(0);
         this.spyObj.getViews.and.returnValue([]);
         this.spyObj.isSwipeBackEnabled.and.returnValue(true);
-        this.spyObj.viewDidEnter = Observable.of();
-        this.spyObj.viewDidLeave = Observable.of();
-        this.spyObj.viewDidLoad = Observable.of();
-        this.spyObj.viewWillEnter = Observable.of();
-        this.spyObj.viewWillLeave = Observable.of();
-        this.spyObj.viewWillUnload = Observable.of();
+        this.spyObj.viewDidEnter = of();
+        this.spyObj.viewDidLeave = of();
+        this.spyObj.viewDidLoad = of();
+        this.spyObj.viewWillEnter = of();
+        this.spyObj.viewWillLeave = of();
+        this.spyObj.viewWillUnload = of();
         this.spyObj['length'].and.returnValue(0);
         this.spyObj['root'] = new ViewControllerMock();
         this.spyObj['rootParams'] = {};

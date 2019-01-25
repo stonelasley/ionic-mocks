@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable, of } from 'rxjs';
 import { ArrayObservable } from 'rxjs/observable/ArrayObservable';
 import { NavControllerMock } from './nav-controller';
 import { BaseMock } from '../base.mock';
@@ -48,22 +48,22 @@ export class AppMock extends BaseMock {
         );
         this.spyObj.isScrolling.and.returnValue(false);
         this.spyObj.viewDidEnter.and.returnValue(
-            _viewObservable || ArrayObservable.of(undefined)
+            _viewObservable || of(undefined)
         );
         this.spyObj.viewDidLoad.and.returnValue(
-            _viewObservable || ArrayObservable.of(undefined)
+            _viewObservable || of(undefined)
         );
         this.spyObj.viewDidLeave.and.returnValue(
-            _viewObservable || ArrayObservable.of(undefined)
+            _viewObservable || of(undefined)
         );
         this.spyObj.viewWillEnter.and.returnValue(
-            _viewObservable || ArrayObservable.of(undefined)
+            _viewObservable || of(undefined)
         );
         this.spyObj.viewWillLeave.and.returnValue(
-            _viewObservable || ArrayObservable.of(undefined)
+            _viewObservable || of(undefined)
         );
         this.spyObj.viewWillUnload.and.returnValue(
-            _viewObservable || ArrayObservable.of(undefined)
+            _viewObservable || of(undefined)
         );
     }
 
