@@ -5,4 +5,5 @@ import { ThreeDeeTouchMock } from './three-dee-touch';
 import { NetworkMock } from './network';
 import { GoogleAnalyticsMock } from './google-analytics';
 import { NFCMock } from './nfc';
-export { KeyboardMock, SplashScreenMock, StatusBarMock, ThreeDeeTouchMock, NetworkMock, GoogleAnalyticsMock, NFCMock };
+import { VibrationMock } from './vibration';
+export { KeyboardMock, SplashScreenMock, StatusBarMock, ThreeDeeTouchMock, NetworkMock, GoogleAnalyticsMock, NFCMock, VibrationMock };

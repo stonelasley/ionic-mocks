@@ -8,12 +8,14 @@ var AlertMock = /** @class */ (function () {
         var _dismissCallback;
         var instance = create_spy_1.createSpyObj('Alert', ['present', 'dismiss', 'onDidDismiss']);
         instance.present.and.returnValue(Promise.resolve());
-        instance.dismiss.and.callFake(function () {
-            _dismissCallback();
+        instance.dismiss.and.callFake(function (x) {
+            _dismissCallback(x);
             return Promise.resolve();
         });
         instance.onDidDismiss.and.callFake(function (callback) {
-            _dismissCallback = callback;
+            if (callback) {
+                _dismissCallback = callback;
+            }
         });
         return instance;
     };

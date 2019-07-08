@@ -16,7 +16,7 @@ var MenuControllerMock = /** @class */ (function () {
         instance.isEnabled.and.returnValue(true);
         instance.isOpen.and.returnValue(false);
         instance.open.and.returnValue(Promise.resolve());
-        instance.swipeEnabled.and.returnValue(m);
+        instance.swipeEnable.and.returnValue(m);
         instance.toggle.and.returnValue(Promise.resolve());
         return instance;
     };

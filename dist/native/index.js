@@ -14,4 +14,6 @@ var google_analytics_1 = require("./google-analytics");
 exports.GoogleAnalyticsMock = google_analytics_1.GoogleAnalyticsMock;
 var nfc_1 = require("./nfc");
 exports.NFCMock = nfc_1.NFCMock;
+var vibration_1 = require("./vibration");
+exports.VibrationMock = vibration_1.VibrationMock;
 //# sourceMappingURL=index.js.map
